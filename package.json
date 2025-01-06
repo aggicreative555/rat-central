@@ -1,15 +1,38 @@
 {
-  "name": "fed2-js2-ca",
+  "name": "css-frameworks",
   "private": true,
   "version": "0.0.0",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/style.css --watch",
     "build": "vite build",
     "preview": "vite preview",
     "start": "node server.js"
   },
   "devDependencies": {
-    "vite": "^5.4.1"
+    "@eslint/js": "^9.17.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.7"
+  },
+  "keywords": [],
+  "author": "aggi.creative",
+  "license": "ISC",
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*html": [
+      "prettier --write"
+    ],
+    "*.{js,css,md}": "prettier --write"
   }
 }

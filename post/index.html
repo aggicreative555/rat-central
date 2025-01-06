@@ -14,20 +14,24 @@
     </nav>
 
     <h1>Post Page</h1>
-    <a href="/post/create/">Create A Post</a><br>
+    <a href="/post/create/">Create A Post</a><br />
     <a href="/post/">See All Posts</a>
     <div id="searchBar">
       <select id="searchType">
-          <option value="title">Title or Content</option>
-          <option value="tag">Tag</option>
+        <option value="title">Title or Content</option>
+        <option value="tag">Tag</option>
       </select>
-      <input type="text" id="searchQuery" placeholder="Enter your search query" />
+      <input
+        type="text"
+        id="searchQuery"
+        placeholder="Enter your search query"
+      />
       <button id="searchButton">Search</button>
     </div>
 
     <div class="postsContainer" id="postsContainer"></div>
 
-  <script type="module" src="/src/app.js"></script>
-  <script type="module" src="/src/js/router/views/post.js"></script>
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/js/router/views/post.js"></script>
   </body>
 </html>

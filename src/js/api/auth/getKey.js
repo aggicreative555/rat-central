@@ -4,11 +4,11 @@ import { save } from "../../utilities/authGuard";
 import { getHeaders } from "../headers";
 
 /**
- * 
- * @param {string} [name="apiKey"] - The name for the API Key. 
- * @returns {Promise<string>} A promise that resolves to the API key. 
- * @throws {Error} If the access token is missing or API key creation fails. 
- * 
+ *
+ * @param {string} [name="apiKey"] - The name for the API Key.
+ * @returns {Promise<string>} A promise that resolves to the API key.
+ * @throws {Error} If the access token is missing or API key creation fails.
+ *
  * @example
  * const apiKey = await getApiKey();
  * console.log(ApiKey); // Outputs API Key
@@ -42,7 +42,6 @@ export async function getApiKey(name = "apiKey") {
 
       save("apiKey", apiKey);
       return apiKey;
-
     } else {
       throw new Error(`Failed to create API key`);
     }

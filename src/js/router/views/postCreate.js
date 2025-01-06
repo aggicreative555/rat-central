@@ -1,15 +1,14 @@
 import { onCreatePost } from "../../ui/post/create";
 import { authGuard } from "../../utilities/authGuard";
 
-
 document.addEventListener("DOMContentLoaded", () => {
-    authGuard();
+  authGuard();
 
-    const form = document.querySelector("#createPost");
+  const form = document.querySelector("#createPost");
 
-    if (form) {
-        form.addEventListener("submit", onCreatePost);
-    } else {
-        console.error("Create Post form not found");
-    }
+  if (form) {
+    form.addEventListener("submit", onCreatePost);
+  } else {
+    console.error("Create Post form not found");
+  }
 });

@@ -20,7 +20,7 @@ export function authGuard() {
  * @function save
  * @param {string} key - The key under which the value will be stored.
  * @param {*} value - The value to store. Can be any data type, which will be stringified.
- * 
+ *
  * // Example usage: Save user data to localStorage
  * save("userProfile", { name: "User", email: "user@mail.com" });
  *
@@ -37,7 +37,7 @@ export function save(key, value) {
  * @param {string} key - The key for which the value needs to be retrieved.
  * @returns {*} The parsed value from localStorage, or an error object if parsing fails.
  * @throws {Error} If there is an error retrieving or parsing the value from localStorage.
- * 
+ *
  * // Example usage: Load user profile from localStorage
  * const userProfile = load("userProfile");
  *
@@ -49,7 +49,7 @@ export function load(key) {
     return JSON.parse(value);
   } catch (error) {
     console.error("Error loading key", error);
-    return error
+    return error;
   }
 }
 

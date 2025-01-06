@@ -4,8 +4,12 @@ import { defineConfig } from "vite";
 export default defineConfig({
   appType: "mpa",
   base: "",
+  server: {
+    port: 3000,
+  },
   build: {
     target: "esnext",
+    outDir: "dist",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "./index.html"),

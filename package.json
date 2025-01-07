@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "npx tailwindcss -i ./css/input.css -o ./css/style.css --watch",
+    "dev": "vite --port 3000",
     "build": "vite build",
     "preview": "vite preview",
     "start": "node server.js"

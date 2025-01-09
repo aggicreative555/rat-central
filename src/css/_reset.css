@@ -1,12 +1,55 @@
-* {
-  &:before,
-  &:after,
-  & {
-    box-sizing: inherit;
-  }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-body {
-  box-sizing: border-box;
-  margin: 0;
+/* Remove default margin */
+
+* {
+    margin:0;
+    padding:0;
+    font: inherit;
 }
+
+/* Remove list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Avoid double scroll bars */
+html,
+body {
+  height: 100%; 
+  -webkit-font-smoothing: always;
+  font-feature-settings: normal;
+}
+
+/* Make images easier to work with  */
+img,
+picture,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove built-in type */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+

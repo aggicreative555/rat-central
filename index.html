@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <link href="./src/css/style.css" rel="stylesheet">
   </head>
 
-  <body>
-    <img src="/images/noroff-logo.png" alt="Noroff Logo" />
-    <button id="mode-toggler">Toggle Mode</button>
-
-    <div class="bg-red-500">
-      <h1>Home</h1>
+  <body class="fill-background-light text-text-dark">
+    <div class="flex justify-between align-middle">
+      <img src="/images/logo-full.svg" alt="Rat Central Logo" />
+      <nav class="flex font-bold text-lg gap-5">
+        <a href="/post/">Explore</a>
+        <a href="/auth/login/">Login</a>
+        <a href="/auth/register/">Register</a>
+        <button id="mode-toggler">Mode</button>
+      </nav>
+    </div>
+    
+    <div class="flex-column align-center justify-center">
+      <h1 class="font-display text-center text-8xl">Welcome</h1>
+      <h2 class="font-body font-bold text-center text-lg">to <span class="uppercase">rat</span>central</h2>
     </div>
 
-    <a href="/profile/">My Profile</a>
-    <a href="/post/">Posts</a>
-    <a href="/auth/login/">Login</a>
-    <a href="/auth/register/">Register</a>
-    <button id="logoutButton">Logout</button>
   </body>
 </html>

@@ -1,6 +1,5 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import postcss from "./postcss.config.js";
 
 export default defineConfig({
   appType: "mpa",

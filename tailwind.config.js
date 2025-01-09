@@ -8,24 +8,67 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ["Ruslan Display", "serif"], // Display font for headings
+        body: ["Inter", "sans-serif"],
+      },
+
       colors: {
-        brand: {
-          50: "#",
-          100: "#",
+
+        background: {
+          light: "#FFF9F2", // Light mode background
+          dark: "#260201", // Dark mode background
+        },
+
+        brown: {
+          100: "#FFF9F2", // Lightest 
+          200: "#FDDCC3",
+          300: "#EDB18C",
+          400: "#C47650",
+          500: "#73321A",
+          600: "#601D0B",
+          700: "#4D0F04",
+          800: "#390702",
+          900: "#260201", // Darkest
+        },
+
+        grey: {
+          100: "#", // Lightest 
           200: "#",
           300: "#",
           400: "#",
-          500: "#2196F3", // Default brand colour
+          500: "#2196F3",
           600: "#1E88E5",
           700: "#1976D2",
           800: "#1565C0",
-          900: "#0D47A1", // Dark brand colour
+          900: "#0D47A1", // Darkest
+        },
+
+        text: {
+          dark: "#260201", // Light theme
+          light: "#FFF9F2",  // Dark theme
+        },
+
+        orange: {
+          100: "#EFA443", // Yellow
+          200: "#D94B18", // Dark theme
+          300: "#C74516", // Light theme
+        },
+
+        green: {
+          100: "#008C1C", // Dark theme
+          200: "#005D2C", // Light theme
+        },
+
+        red: {
+          100: "#E62800", // Dark theme
+          200: "#9E1B14", // Light theme
         },
       },
     },
   },
-
   darkMode: "selector",
   plugins: [],
+
 };
 

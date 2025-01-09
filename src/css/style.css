@@ -1,4 +1,5 @@
 @import url(_reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Ruslan+Display&display=swap');
 
 @tailwind base;
 @tailwind components;

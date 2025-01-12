@@ -5,25 +5,41 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/app.js" defer></script>
     <link href="./src/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&"/>
   </head>
 
-  <body class="fill-background-light text-text-dark">
-    <div class="flex justify-between align-middle">
-      <img src="/images/logo-full.svg" alt="Rat Central Logo" />
-      <nav class="flex font-bold text-lg gap-5">
-        <a href="/post/">Explore</a>
-        <a href="/auth/login/">Login</a>
-        <a href="/auth/register/">Register</a>
-        <button id="mode-toggler">Mode</button>
-      </nav>
-    </div>
+  <body class="bg-background-light text-text-dark">
+    <header class="w-full">
+      <div class="container mx-auto py-4 px-8 h-fit w-screen m-4 flex justify-between content-center font-semibold text-lg">
+        <div class="flex justify-start">
+          <a href="./index.html" class="align-center" title="Home" aria-label="Home link"><img src="/images/logo-full.svg" alt="Rat Central Logo"/></a>
+        </div>
+        <div class="lg:hidden justify-end content-center m-4 right-20">
+          <button id="hamburger" >
+            <span class="material-symbols-rounded text-4xl">menu</span>
+          </button>
+        </div>
+        <nav class="content-center lg:block hidden" id="navToggler">
+          <a href="/post/" title="Explore" aria-label="Explore page">Explore</a>
+          <a href="/auth/login/" title="Login" aria-label="Login page">Login</a>
+          <a href="/auth/register/" title="register" aria-label="Register page">Register</a>
+          <button id="mode-toggler" title="Dark or Light theme" aria-label="Dark or light theme toggle">
+            <span class="material-symbols-rounded">brightness_4</span>
+            <span class="hidden material-symbols-rounded">brightness_low</span>
+          </button>
+        </nav>
+      </div>
+    </header>
     
-    <div class="flex-column align-center justify-center">
-      <h1 class="font-display text-center text-8xl">Welcome</h1>
-      <h2 class="font-body font-bold text-center text-lg">to <span class="uppercase">rat</span>central</h2>
-    </div>
+    <main class="">
+      <div class="flex-column align-center justify-center py-8">
+        <h1 class="font-display text-center text-8xl">Welcome</h1>
+        <h2 class="font-body font-bold text-center text-xl">to <span class="uppercase">&copy;rat</span>central</h2>
+      </div>
+      <div class="card-container"></div>
+    </main>
 
   </body>
 </html>

@@ -65,10 +65,26 @@ module.exports = {
           200: "#9E1B14", // Light theme
         },
       },
+
+      animation: {
+        'fade-in': 'fadeIn 0.3s ease-in-out',
+        'fade-out': 'fadeOut 0.3s ease-in-out',
+      },
+
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        fadeOut: {
+          '100%': { opacity: '1' },
+          '0%': { opacity: '0' },
+        },
+      },
+
     },
   },
   darkMode: "selector",
   plugins: [],
 
 };
-

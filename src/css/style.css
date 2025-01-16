@@ -30,10 +30,16 @@
 }
 
 .btn-secondary {
-    @apply bg-brown-400 border-solid border-brown-800/20 border-2 shadow-xl text-text-dark py-3 px-8 rounded-md font-semibold capitalize hover:bg-brown-700 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300;
+    @apply bg-brown-400 border-solid border-brown-800/20 border-2 shadow-xl text-text-dark py-3 px-8 text-center rounded-md font-semibold capitalize hover:bg-brown-700 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300;
 }
 
 .btn-accent {
-    @apply bg-brown-700/20 py-3 px-8 rounded-full font-semibold capitalize hover:bg-brown-700/40 hover:font-bold hover:shadow-md hover:px-9 transform ease-in-out duration-300;
+    @apply bg-brown-700/20 py-3 px-8 text-center rounded-full font-semibold capitalize hover:bg-brown-700/40 hover:font-bold hover:shadow-md hover:px-9 transform ease-in-out duration-300;
+}
+
+/* Input variants */
+.input-default {
+    @apply border-solid border-brown-500/50 border-2 w-96 text-lg text-text-medium py-2 px-6 rounded-md font-semibold placeholder:text-brown-500/50 hover:text-text-dark hover:ring-inset hover:ring-brown-900/10 hover:ring-2 hover:font-semibold hover:border-brown-600 hover:px-9 transform ease-in-out duration-300;
+
 }
 }

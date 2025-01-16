@@ -46,6 +46,7 @@ module.exports = {
 
         text: {
           dark: "#260201", // Light theme
+          medium: "601D0B", // Input text / captions
           light: "#FFF9F2",  // Dark theme
         },
 
@@ -69,6 +70,7 @@ module.exports = {
       animation: {
         'fade-in': 'fadeIn 0.3s ease-in-out',
         'fade-out': 'fadeOut 0.3s ease-in-out',
+        'gradient-xy': 'gradient-xy 4s ease infinite'
       },
 
       keyframes: {
@@ -80,7 +82,20 @@ module.exports = {
           '100%': { opacity: '1' },
           '0%': { opacity: '0' },
         },
+
+        'gradient-xy': {
+                '0%, 100%': {
+                    'background-size':'400% 400%',
+                    'background-position': 'left center'
+                },
+                '50%': {
+                    'background-size':'200% 200%',
+                    'background-position': 'right center'
+                }
+              },
       },
+
+      
 
     },
   },

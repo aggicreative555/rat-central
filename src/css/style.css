@@ -9,14 +9,14 @@
 /* Base button styles */
 
 .drop-down {
-    @apply absolute flex flex-col-reverse gap-14 justify-start right-2 z-10 top-16 mt-16 w-fit h-fit py-20 px-24 origin-top-right bg-background-light rounded-md shadow-xl shadow-brown-900/20 ring-brown-900/10 ring-1 animate-fade-in animate-fade-out;
+    @apply absolute flex flex-col-reverse gap-14 justify-start right-2 z-10 top-16 mt-16 w-fit h-fit py-20 px-24 origin-top-right bg-background-light rounded-md shadow-xl shadow-brown-900/20 ring-brown-900/10 ring-1 animate-fade-in;
 }
 
 .nav-bar {
     @apply flex flex-row gap-10 items-center; 
 }
 
-.nav-bar a, .drop-down a {
+.link {
     @apply text-brown-900 hover:text-brown-400 transition-colors duration-300;
 }
 
@@ -24,16 +24,16 @@
     @apply text-brown-900 hover:text-brown-400 transition-colors duration-300;
 }
 
-.btn {
-    @apply font-heading py-2 px-4;
-}
-
 /* Button variants */
 .btn-primary {
-    @apply bg-blue-500 text-white;
+    @apply bg-orange-100 border-solid border-brown-800/50 border-2 shadow-xl text-text-dark py-3 px-8 rounded-md font-semibold capitalize hover:bg-brown-500 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300;
 }
 
 .btn-secondary {
-    @apply bg-gray-500 text-white;
+    @apply bg-brown-400 border-solid border-brown-800/20 border-2 shadow-xl text-text-dark py-3 px-8 rounded-md font-semibold capitalize hover:bg-brown-700 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300;
+}
+
+.btn-accent {
+    @apply bg-brown-700/20 py-3 px-8 rounded-full font-semibold capitalize hover:bg-brown-700/40 hover:font-bold hover:shadow-md hover:px-9 transform ease-in-out duration-300;
 }
 }

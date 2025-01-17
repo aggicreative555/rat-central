@@ -1,3 +1,5 @@
+import { toggleMode } from "./modeToggler";
+
 export function setNavToggler() {
   try {
     const navToggler = document.getElementById('navToggler');
@@ -40,6 +42,8 @@ export function setNavToggler() {
     window.addEventListener('resize', handleResize);
 
     handleResize();
+
+    toggleMode();
 
   } catch (error) {
     console.error("Dropdown menu not working.");

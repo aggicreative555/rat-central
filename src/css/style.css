@@ -9,7 +9,7 @@
 /* Base button styles */
 
 .drop-down {
-    @apply absolute flex flex-col-reverse gap-14 justify-start right-2 z-10 top-16 mt-16 w-fit h-fit py-20 px-24 origin-top-right bg-background-light rounded-md shadow-xl shadow-brown-900/20 ring-brown-900/10 ring-1 animate-fade-in;
+    @apply absolute flex flex-col-reverse gap-14 justify-center min-w-80 items-center right-2 z-10 top-16 mt-16 h-fit py-20 px-24 origin-top-right bg-background-light rounded-md shadow-xl shadow-brown-900/20 ring-brown-900/10 ring-1 animate-fade-in;
 }
 
 .nav-bar {
@@ -39,7 +39,7 @@
 
 /* Input variants */
 .input-default {
-    @apply border-solid border-brown-500/50 border-2 w-96 text-lg text-text-medium py-2 px-6 rounded-md font-semibold placeholder:text-brown-500/50 hover:text-text-dark hover:ring-inset hover:ring-brown-900/10 hover:ring-2 hover:font-semibold hover:border-brown-600 hover:px-9 transform ease-in-out duration-300;
+    @apply border-solid border-brown-500/50 border-2 md:w-96 w-fit text-lg text-text-medium py-2 px-6 rounded-md font-semibold placeholder:text-brown-500/50 hover:text-text-dark hover:ring-inset hover:ring-brown-900/10 hover:ring-2 hover:font-semibold hover:border-brown-600 hover:px-9 transform ease-in-out duration-300 transition-all;
 
 }
 }

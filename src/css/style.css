@@ -17,24 +17,24 @@
 }
 
 .link {
-    @apply text-brown-900 hover:text-brown-400 transition-colors duration-300;
+    @apply text-text-dark hover:text-brown-400  dark:text-text-light transition-colors duration-300;
 }
 
 .nav-bar button, .drop-down button {
-    @apply text-brown-900 hover:text-brown-400 transition-colors duration-300;
+    @apply text-brown-900 dark:text-text-light hover:text-brown-400 transition-colors duration-300 ;
 }
 
 /* Button variants */
 .btn-primary {
-    @apply bg-orange-100 border-solid border-brown-800/50 border-2 shadow-xl text-text-dark py-3 px-8 rounded-md font-semibold capitalize hover:bg-brown-500 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300;
+    @apply bg-orange-100 border-solid border-brown-800/50 border-2 shadow-xl text-text-dark py-3 px-8 rounded-md font-semibold capitalize hover:bg-brown-500 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300 border-orange-100;
 }
 
 .btn-secondary {
-    @apply bg-brown-400 border-solid border-brown-800/20 border-2 shadow-xl text-text-dark py-3 px-8 text-center rounded-md font-semibold capitalize hover:bg-brown-700 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300;
+    @apply bg-brown-400 border-solid border-brown-800/20 dark:border-brown-400 border-2 shadow-xl text-text-dark py-3 px-8 text-center rounded-md font-semibold capitalize hover:bg-brown-700 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300;
 }
 
 .btn-accent {
-    @apply bg-brown-700/20 py-3 px-8 text-center rounded-full font-semibold capitalize hover:bg-brown-700/40 hover:font-bold hover:shadow-md hover:px-9 transform ease-in-out duration-300;
+    @apply bg-brown-700/20 dark:bg-brown-500 dark:text-text-light py-3 px-8 text-center rounded-full font-semibold capitalize hover:bg-brown-600/70 hover:font-bold hover:shadow-md hover:px-9 transform ease-in-out duration-300;
 }
 
 /* Input variants */
@@ -42,4 +42,17 @@
     @apply border-solid border-brown-500/50 border-2 md:w-96 w-fit text-lg text-text-medium py-2 px-6 rounded-md font-semibold placeholder:text-brown-500/50 hover:text-text-dark hover:ring-inset hover:ring-brown-900/10 hover:ring-2 hover:font-semibold hover:border-brown-600 hover:px-9 transform ease-in-out duration-300 transition-all;
 
 }
+
+/* Gradients */
+
+.light-mode-gradient {
+    @apply bg-gradient-to-br from-brown-900  to-brown-400 
 }
+
+.dark-mode-gradient {
+    @apply bg-gradient-to-br from-brown-100 to-orange-100
+
+}
+
+}
+

@@ -4,7 +4,8 @@ module.exports = {
   mode: 'jit',
   content: [
     "./**/*.html",
-    "./src/**/*.{html,js,jsx,ts,tsx}",
+    "./src/**/*.{html,js,mjs}",
+    "!./node_modules/**/*",
   ],
   theme: {
     extend: {

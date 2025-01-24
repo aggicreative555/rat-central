@@ -26,9 +26,9 @@
           <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
           <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
           <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
-          <button id="mode-toggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
-            <span class="material-symbols-rounded">brightness_4</span>
-            <span class="hidden material-symbols-rounded">brightness_low</span>
+          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
+            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
+            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
           </button>
         </nav>
       </div>
@@ -64,14 +64,15 @@
             minlength="8" 
             required/>
           </div>
+          <div class="flex flex-col gap-4">
+            <button class="btn-primary mt-2" type="submit">Register</button>
+            <h2 class="text-xl font-semibold mt-8 text-center">Already a user?</h2>
+            <a class="btn-secondary" href="/auth/login/">Login</a>
+          </div>
         </form>
-        <div class="flex flex-col gap-4">
-          <button class="btn-primary mt-2" type="submit">Register</button>
-          <h2 class="text-xl font-semibold mt-8 text-center">Already a user?</h2>
-          <a class="btn-secondary" href="/auth/login/">Login</a>
-        </div>
       </div>
     </main>
-    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="../../src/app.js"></script>
+    <script type="module" src="../../src/js/router/views/register.js"></script>
   </body>
 </html>

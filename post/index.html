@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
-    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="../src/css/style.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&"/>
   </head>
   <body class="bg-background-light text-text-dark">
@@ -25,34 +26,38 @@
           <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
           <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
           <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
-          <button id="mode-toggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
-            <span class="material-symbols-rounded">brightness_4</span>
-            <span class="hidden material-symbols-rounded">brightness_low</span>
+          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
+            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
+            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
           </button>
         </nav>
       </div>
     </header>
     <main>
-
-      <h1>Post Page</h1>
-      <a href="/post/create/">Create A Post</a><br />
-      <a href="/post/">See All Posts</a>
-      <div id="searchBar">
-        <select id="searchType">
-          <option value="title">Title or Content</option>
-          <option value="tag">Tag</option>
-        </select>
-        <input
-          type="text"
-          id="searchQuery"
-          placeholder="Enter your search query"
-        />
-        <button id="searchButton">Search</button>
+      <h1 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient">Explore</h1>
+      <div id="searchBar" class="flex justify-center m-10 p-5 gap-8">
+        <div class=" flex flex-col md:flex-row md:rounded-full gap-10 border-solid border-2 border-brown-700/20 dark:bg-brown-500 dark:text-text-light py-2 px-2 text-center rounded-md font-semibold capitalize">
+          <select id="searchType" class="text-text-dark px-5 font-semibold bg-transparent p-4">
+            <option value="title" selected disabled>Search by</option>
+            <option value="title">Title</option>
+            <option value="tag">Tag</option>
+          </select>
+          <input
+            type="text"
+            id="searchQuery"
+            placeholder="Enter your search query"
+            class="placeholder:text-brown-500 bg-transparent m-3 p-4 md:p-2 rounded-full"
+          />
+          <button id="searchButton" class="btn-accent hover:text-text-light">Search
+          </button>
+        </div>
       </div>
+      <div class="flex justify-center m-8"><a href="/post/create/" class="btn-accent">Post Something<span class="material-symbols-rounded text-center align-middle pl-2">add</span></a></div>
+
   
-      <div class="postsContainer" id="postsContainer"></div>
-  
-      <script type="module" src="/src/app.js"></script>
+      <div id="postsContainer" class="mt-14 mx-5 h-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center align-middle transition-all"></div>
     </main>
+    <script type="module" src="../src/app.js"></script>
+    <script type="module" src="../src/js/router/views/post.js"></script>
   </body>
 </html>

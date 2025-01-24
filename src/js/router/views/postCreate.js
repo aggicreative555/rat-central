@@ -1,7 +1,8 @@
 import { onCreatePost } from "../../ui/post/create";
 import { authGuard } from "../../utilities/authGuard";
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializePostCreate () {
+
   authGuard();
 
   const form = document.querySelector("#createPost");
@@ -11,4 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Create Post form not found");
   }
-});
+}
+
+initializePostCreate();

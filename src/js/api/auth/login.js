@@ -1,5 +1,6 @@
 import { API_AUTH_LOGIN } from "../constants";
 import { save } from "../../utilities/authGuard";
+import { initalizeApiKey } from "./initializeApiKey";
 
 /**
  * Logs in a user with the provided email and password.
@@ -39,6 +40,7 @@ export async function login(profile) {
 
       save("accessToken", accessToken);
       save("user", user);
+      initalizeApiKey();
     }
   } catch (error) {
     console.error("Login error:", error);

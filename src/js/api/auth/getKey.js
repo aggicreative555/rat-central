@@ -21,6 +21,8 @@ export async function getApiKey(name = "apiKey") {
       return storedApiKey;
     }
 
+    console.log(storedApiKey);
+
     const accessToken = load("accessToken");
 
     if (!accessToken) {

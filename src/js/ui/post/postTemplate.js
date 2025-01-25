@@ -1,3 +1,6 @@
+import { readPost } from "../../api/post/read";
+
+
 /**
  * Generates a DOM element representing a post based on the provided data.
  *
@@ -58,29 +61,43 @@ export function postTemplate(postData) {
   title.calssName = "text-2xl font-bold text-text-dark";
   title.textContent = data.title || "";
 
-  // // Add comments count if available
+  // Add comments
 
-  // const commentCount = data._count?.comments || "0";
+  const commentContainer = document.createElement("div");
+  commentContainer.className = "flex flex-row gap-2";
 
-  // const commentContainer = document.createElement("div");
-  // commentContainer.className = "flex flex-row gap-2";
+  const commentIcon = document.createElement("span");
+  commentIcon.className = "material-symbols-rounded";
+  commentIcon.textContent = "chat_bubble";
+  commentContainer.appendChild(commentIcon);
 
-  // const commentContent = document.createElement("p");
-  // commentContent.className = "text-text-dark text-sm";
-  // commentContent.innerText = commentCount ;
+  const commentCount = document.createElement("span");
+  commentCount.textContent = data._count?.comments || "0";
+  commentContainer.appendChild(commentCount);
 
-  // const commentIcon = document.createElement("span");
-  // commentIcon.className = "material-symbols-rounded";
-  // commentIcon.innerText = 'chat_bubble';
 
-  // commentContainer.appendChild(commentCount);
-  // commentContainer.appendChild(commentIcon);
+
+  // Add reaction
   
-  // post.appendChild(commentContainer);
+  const reactionContainer = document.createElement("div");
+  reactionContainer.className = "flex flex-row gap-2";
 
+  const reactionIcon = document.createElement("span");
+  reactionIcon.className = "material-symbols-rounded";
+  reactionIcon.textContent = "local_pizza";
+  reactionContainer.appendChild(reactionIcon);
 
+  const reactionCount = document.createElement("span");
+  reactionCount.textContent = data._count?.reactions || "0";
+  reactionContainer.appendChild(reactionCount);
+
+  
+  
+  
   contentOverlay.appendChild(username);
   contentOverlay.appendChild(title);
+  post.appendChild(commentContainer);
+  post.appendChild(reactionContainer);
   post.appendChild(contentOverlay);
   
   
@@ -127,6 +144,151 @@ export function postTemplate(postData) {
     hoverOverlay.style.opacity = "0";
   });
 
+  return post;
+}
+
+/**
+ * Renders a single post into a parent element.
+ *
+ * @function renderPostTemplate
+ * @param {Object} postData - Data for the post
+ * @param {HTMLElement} parent - Parent element where the post will be rendered.
+ */
+
+export function renderPostTemplate(postData, parent) {
+  parent.innerHTML = "";
+
+  const data = postData.data || postData;
+
+  const post = document.createElement("div");
+  post.className = "flex flex-col w-full";
+
+
+  // Add go back function
+
+  const backContainer = document.createElement("a");
+  backContainer.className = "flex flex-row-reverse gap-2 justify-end items-center my-4 mx-4 text-text-dark text-lg font-semibold transition-all hover:text-brown-400 hover:font-bold hover:mx-2";
+  backContainer.textContent = "Back";
+
+  const backIcon = document.createElement("span");
+  backIcon.className = "material-symbols-rounded";
+  backIcon.textContent = "arrow_back";
+  backContainer.appendChild(backIcon);
+
+
+  post.appendChild(backContainer);
+
+  
+  const imageContainer = document.createElement("div");
+  imageContainer.className = "w-full h-full bg-cover bg-center h-96";
+  
+  // Add media if available
+
+  const imageUrl = data.media?.url || "https://i.pinimg.com/736x/48/a1/32/48a13246cb33767982acd2530b8acb20.jpg";
+  imageContainer.style.backgroundImage = `url('${imageUrl}')`;
+
+  post.appendChild(imageContainer);
+
+
+  const contentContainer = document.createElement('div');
+  contentContainer.className = 'flex flex-col gap-2 mx-8 my-4';
+  post.appendChild(contentContainer);
+
+
+  // Add comments
+
+  const interactiveContainer = document.createElement("div");
+  interactiveContainer.className = "flex flex-row-reverse justify-end gap-8 text-brown-400 font-semibold";
+
+  contentContainer.appendChild(interactiveContainer);
+
+  const commentContainer = document.createElement("div");
+  commentContainer.className = "flex flex-row gap-2 group hover:text-text-dark transition-all";
+
+  const commentIcon = document.createElement("span");
+  commentIcon.className = "material-symbols-rounded group-hover:animate-pulse";
+  commentIcon.textContent = "chat_bubble";
+  commentContainer.appendChild(commentIcon);
+
+  const commentCount = document.createElement("span");
+  commentCount.textContent = data._count?.comments || "0";
+  commentContainer.appendChild(commentCount);
+
+
+  interactiveContainer.appendChild(commentContainer);
+
+
+  // Add reaction
+  
+  const reactionContainer = document.createElement("div");
+  reactionContainer.className = "flex flex-row gap-2 group hover:text-text-dark transition-all";
+
+  const reactionIcon = document.createElement("span");
+  reactionIcon.className = "material-symbols-rounded group-hover:animate-pulse";
+  reactionIcon.textContent = "local_pizza";
+  reactionContainer.appendChild(reactionIcon);
+
+  const reactionCount = document.createElement("span");
+  reactionCount.textContent = data._count?.reactions || "0";
+  reactionContainer.appendChild(reactionCount);
+
+  
+  interactiveContainer.appendChild(reactionContainer);
+
+  // Add title
+  const title = document.createElement("h1");
+  title.className = "text-5xl font-bold text-text-dark pt-4";
+  title.textContent = data.title || "";
+
+  contentContainer.appendChild(title);
+
+
+  // Add author
+  const username = document.createElement('h2');
+  username.className = 'text-sm text-brown-900/60 ';
+  username.textContent = `${data.author || "anonymous"}`;
+  contentContainer.appendChild(username);
+
+  // Add description
+  
+  const description = document.createElement("p");
+  description.className = "text-md text-text-dark py-4";
+  description.textContent = "i found a loop hole to get into this french restaurant, where they have unlimited cheese & grapes.bro’s working there apparently. apparently he controls a socially awkward dude through. anyways, me and the gang came over and bro got us stacked with cheese and grapes. ";
+  contentContainer.appendChild(description);
+
+    // Add tags 
+
+  const tags = document.createElement("p");
+  tags.className = 'text-brown-900/60 text-sm italic'
+  tags.innerText = `${data.tags.map(tag => `#${tag}`).join(", ")}`;
+  contentContainer.appendChild(tags);
+
+
+  parent.appendChild(post);
+}
+
+export function renderMultiplePosts(posts, parent) {
+  parent.innerHTML = ""; // Clear previous posts
+
+  if (Array.isArray(posts)) {
+    posts.forEach((post) => {
+      parent.append(postTemplate(post)); // Append each post
+    });
+  } else {
+    console.error("No posts to render.");
+  }
+}
+
+export async function renderSinglePost(postId, postsContainer) {
+  try {
+    const post = await readPost(postId);
+    renderPostTemplate(post, postsContainer); 
+  } catch (error) {
+    console.error("Error loading a single post:", error);
+    postsContainer.innerHTML = `<p>Failed to load post. Please reload the page or try again later.</p>`;
+  }
+}
+
 
   // // Add tags if available
   // if (data.tags?.length > 0) {
@@ -142,32 +304,3 @@ export function postTemplate(postData) {
   //   reactionCount.innerText = `Reactions: ${data._count?.reactions}`;
   //   post.appendChild(reactionCount);
   // }
-
-  return post;
-}
-
-/**
- * Renders a single post into a parent element.
- *
- * @function renderPostTemplate
- * @param {Object} postData - Data for the post
- * @param {HTMLElement} parent - Parent element where the post will be rendered.
- */
-
-export function renderPostTemplate(postData, parent) {
-  parent.innerHTML = "";
-  parent.append(postTemplate(postData));
-  console.log(postData);
-}
-
-export function renderMultiplePosts(posts, parent) {
-  parent.innerHTML = ""; // Clear previous posts
-
-  if (Array.isArray(posts)) {
-    posts.forEach((post) => {
-      parent.append(postTemplate(post)); // Append each post
-    });
-  } else {
-    console.error("No posts to render.");
-  }
-}

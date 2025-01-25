@@ -46,11 +46,22 @@
 /* Gradients */
 
 .light-mode-gradient {
-    @apply bg-gradient-to-br from-brown-900  to-brown-400 
+    @apply bg-gradient-to-br from-brown-900  to-brown-400;
 }
 
 .dark-mode-gradient {
-    @apply bg-gradient-to-br from-brown-100 to-orange-100
+    @apply bg-gradient-to-br from-brown-100 to-orange-100;
+
+}
+
+/* Posts */
+
+.posts-container {
+    @apply mt-14 mx-5 h-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center align-middle transition-all;
+}
+
+.single-post {
+    @apply flex h-fit;
 
 }
 

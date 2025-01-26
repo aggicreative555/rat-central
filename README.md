@@ -70,15 +70,14 @@ npm install tailwindcss @tailwindcss/vite
 **2. Add plugin to vite.config:**
 
 ```json
-
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
+
 export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
 })
-
 ```
 
 [_Full process on tailwind docs_](https://tailwindcss.com/docs/installation/using-vite)

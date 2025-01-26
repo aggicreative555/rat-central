@@ -1,12 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  mode: 'jit',
-  content: [
-    "./**/*.html",
-    "./src/**/*.{html,js,mjs}",
-    "!./node_modules/**/*",
-  ],
+  mode: "jit",
+  content: ["./**/*.html", "./src/**/*.{html,js,mjs}", "!./node_modules/**/*"],
+
   theme: {
     extend: {
       fontFamily: {
@@ -15,14 +12,13 @@ module.exports = {
       },
 
       colors: {
-
         background: {
           light: "#FFF9F2", // Light mode background
           dark: "#260201", // Dark mode background
         },
 
         brown: {
-          100: "#FFF9F2", // Lightest 
+          100: "#FFF9F2", // Lightest
           200: "#FDDCC3",
           300: "#EDB18C",
           400: "#C47650",
@@ -34,7 +30,7 @@ module.exports = {
         },
 
         grey: {
-          100: "#", // Lightest 
+          100: "#", // Lightest
           200: "#",
           300: "#",
           400: "#",
@@ -48,7 +44,7 @@ module.exports = {
         text: {
           dark: "#260201", // Light theme
           medium: "601D0B", // Input text / captions
-          light: "#FFF9F2",  // Dark theme
+          light: "#FFF9F2", // Dark theme
         },
 
         orange: {
@@ -69,38 +65,34 @@ module.exports = {
       },
 
       animation: {
-        'fade-in': 'fadeIn 0.3s ease-in-out',
-        'fade-out': 'fadeOut 0.3s ease-in-out',
-        'gradient-xy': 'gradient-xy 4s ease infinite'
+        "fade-in": "fadeIn 0.3s ease-in-out",
+        "fade-out": "fadeOut 0.3s ease-in-out",
+        "gradient-xy": "gradient-xy 4s ease infinite",
       },
 
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
         fadeOut: {
-          '100%': { opacity: '1' },
-          '0%': { opacity: '0' },
+          "100%": { opacity: "1" },
+          "0%": { opacity: "0" },
         },
 
-        'gradient-xy': {
-                '0%, 100%': {
-                    'background-size':'400% 400%',
-                    'background-position': 'left center'
-                },
-                '50%': {
-                    'background-size':'200% 200%',
-                    'background-position': 'right center'
-                }
-              },
+        "gradient-xy": {
+          "0%, 100%": {
+            "background-size": "400% 400%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
       },
-
-      
-
     },
   },
   darkMode: "selector",
   plugins: [],
-
 };

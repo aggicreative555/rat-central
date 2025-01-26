@@ -15,7 +15,8 @@ import { onDeletePost } from "../../ui/post/delete";
  *
  */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializePostEdit () {
+
   authGuard();
 
   const params = new URL(document.location).searchParams;
@@ -48,4 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Delete button not found. Verify the `id` attribute and ensure it is loaded in the DOM.",
     );
   }
-});
+
+}
+
+initializePostEdit();

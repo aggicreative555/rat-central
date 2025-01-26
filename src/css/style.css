@@ -1,69 +1,74 @@
+
+@import "tailwindcss";
 @import url(_reset.css);
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Ruslan+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Ruslan+Display&display=swap");
+
 
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+@tailwind components;
+
 
 @layer components {
-/* Base button styles */
 
-.drop-down {
-    @apply absolute flex flex-col-reverse gap-14 justify-center min-w-80 items-center right-2 z-10 top-16 mt-16 h-fit py-20 px-24 origin-top-right bg-background-light rounded-md shadow-xl shadow-brown-900/20 ring-brown-900/10 ring-1 animate-fade-in;
+    /* Base button styles */
+  
+    .drop-down {
+      @apply absolute right-2 top-16 z-10 mt-16 flex h-fit min-w-80 origin-top-right animate-fade-in flex-col-reverse items-center justify-center gap-14 rounded-md bg-background-light px-24 py-20 shadow-xl shadow-brown-900/20 ring-1 ring-brown-900/10;
+    }
+  
+    .nav-bar {
+      @apply flex flex-row items-center gap-10;
+    }
+  
+    .link {
+      @apply text-text-dark transition-colors duration-300 hover:text-brown-400 dark:text-text-light;
+    }
+  
+    .nav-bar button,
+    .drop-down button {
+      @apply text-brown-900 transition-colors duration-300 hover:text-brown-400 dark:text-text-light;
+    }
+  
+    /* Button variants */
+    .btn-primary {
+      @apply transform rounded-md border-2 border-solid border-brown-800/50 border-orange-100 bg-orange-100 px-8 py-3 font-semibold capitalize text-text-dark shadow-xl duration-300 ease-in-out hover:rounded-xl hover:bg-brown-500 hover:px-9 hover:font-bold hover:text-text-light hover:shadow-md;
+    }
+  
+    .btn-secondary {
+      @apply transform rounded-md border-2 border-solid border-brown-800/20 bg-brown-400 px-8 py-3 text-center font-semibold capitalize text-text-dark shadow-xl duration-300 ease-in-out hover:rounded-xl hover:bg-brown-700 hover:px-9 hover:font-bold hover:text-text-light hover:shadow-md dark:border-brown-400;
+    }
+  
+    .btn-accent {
+      @apply transform rounded-full bg-brown-700/20 px-8 py-3 text-center font-semibold capitalize duration-300 ease-in-out hover:bg-brown-600/70 hover:px-9 hover:font-bold hover:shadow-md dark:bg-brown-500 dark:text-text-light;
+    }
+  
+    /* Input variants */
+    .input-default {
+      @apply w-fit transform rounded-md border-2 border-solid border-brown-500/50 px-6 py-2 text-lg font-semibold text-text-medium transition-all duration-300 ease-in-out placeholder:text-brown-500/50 hover:border-brown-600 hover:px-9 hover:font-semibold hover:text-text-dark hover:ring-2 hover:ring-inset hover:ring-brown-900/10 md:w-96;
+    }
+  
+    /* Gradients */
+  
+    .light-mode-gradient {
+      @apply bg-gradient-to-br from-brown-900 to-brown-400;
+    }
+  
+    .dark-mode-gradient {
+      @apply bg-gradient-to-br from-brown-100 to-orange-100;
+    }
+  
+    /* Posts */
+  
+    .posts-container {
+      @apply mx-5 mt-14 grid h-full grid-cols-1 justify-items-center gap-6 align-middle transition-all md:grid-cols-2 lg:grid-cols-3;
+    }
+  
+    .single-post {
+      @apply flex h-fit w-full flex-col lg:mx-10 my-10 items-center justify-center transition-all duration-500;
+    }
 }
+  
 
-.nav-bar {
-    @apply flex flex-row gap-10 items-center; 
-}
 
-.link {
-    @apply text-text-dark hover:text-brown-400  dark:text-text-light transition-colors duration-300;
-}
-
-.nav-bar button, .drop-down button {
-    @apply text-brown-900 dark:text-text-light hover:text-brown-400 transition-colors duration-300 ;
-}
-
-/* Button variants */
-.btn-primary {
-    @apply bg-orange-100 border-solid border-brown-800/50 border-2 shadow-xl text-text-dark py-3 px-8 rounded-md font-semibold capitalize hover:bg-brown-500 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300 border-orange-100;
-}
-
-.btn-secondary {
-    @apply bg-brown-400 border-solid border-brown-800/20 dark:border-brown-400 border-2 shadow-xl text-text-dark py-3 px-8 text-center rounded-md font-semibold capitalize hover:bg-brown-700 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300;
-}
-
-.btn-accent {
-    @apply bg-brown-700/20 dark:bg-brown-500 dark:text-text-light py-3 px-8 text-center rounded-full font-semibold capitalize hover:bg-brown-600/70 hover:font-bold hover:shadow-md hover:px-9 transform ease-in-out duration-300;
-}
-
-/* Input variants */
-.input-default {
-    @apply border-solid border-brown-500/50 border-2 md:w-96 w-fit text-lg text-text-medium py-2 px-6 rounded-md font-semibold placeholder:text-brown-500/50 hover:text-text-dark hover:ring-inset hover:ring-brown-900/10 hover:ring-2 hover:font-semibold hover:border-brown-600 hover:px-9 transform ease-in-out duration-300 transition-all;
-
-}
-
-/* Gradients */
-
-.light-mode-gradient {
-    @apply bg-gradient-to-br from-brown-900  to-brown-400;
-}
-
-.dark-mode-gradient {
-    @apply bg-gradient-to-br from-brown-100 to-orange-100;
-
-}
-
-/* Posts */
-
-.posts-container {
-    @apply mt-14 mx-5 h-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center align-middle transition-all;
-}
-
-.single-post {
-    @apply flex h-fit w-full flex-col lg:mx-10 my-10 items-center justify-center transition-all duration-500;
-
-}
-
-}
 

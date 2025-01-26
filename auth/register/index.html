@@ -21,64 +21,135 @@
     />
   </head>
   <body class="bg-background-light text-text-dark">
-    <header class="w-full flex justify-center">
-      <div class="py-4 px-10 h-fit w-screen m-4 flex justify-between content-center font-semibold text-lg">
+    <header class="flex w-full justify-center">
+      <div
+        class="m-4 flex h-fit w-screen content-center justify-between px-10 py-4 text-lg font-semibold"
+      >
         <div class="flex justify-start">
-          <a href="./index.html" class="align-center" title="Home" aria-label="Home link"><img src="/images/logo-full.svg" alt="Rat Central Logo"/></a>
+          <a
+            href="./index.html"
+            class="align-center"
+            title="Home"
+            aria-label="Home link"
+            ><img src="/images/logo-full.svg" alt="Rat Central Logo"
+          /></a>
         </div>
-        <div class="lg:hidden justify-end content-center m-4 right-20" id="toggleBtn">
-          <button id="hamburger" class="transition-all duration-300 ease-in-out" >
+        <div
+          class="right-20 m-4 content-center justify-end lg:hidden"
+          id="toggleBtn"
+        >
+          <button
+            id="hamburger"
+            class="transition-all duration-300 ease-in-out"
+          >
             <span class="material-symbols-rounded text-4xl">menu</span>
           </button>
-          <button id="closeBtn" class="hidden transition-all duration-300 ease-in-out">
+          <button
+            id="closeBtn"
+            class="hidden transition-all duration-300 ease-in-out"
+          >
             <span class="material-symbols-rounded text-4xl">close</span>
           </button>
         </div>
-        <nav class="content-center hidden animate-fade-in" id="navToggler">
-          <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
-          <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
-          <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
-          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
-            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
-            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
+        <nav class="hidden animate-fade-in content-center" id="navToggler">
+          <a
+            href="/post/"
+            title="Explore page"
+            aria-label="Explore page"
+            class="link"
+            >Explore</a
+          >
+          <a
+            href="/auth/login/"
+            title="Login page"
+            aria-label="Login page"
+            class="btn-accent"
+            >Login</a
+          >
+          <a
+            href="/auth/register/"
+            title="Register page"
+            aria-label="Register page"
+            class="link"
+            >Register</a
+          >
+          <button
+            id="modeToggler"
+            title="Dark/light theme button"
+            aria-label="Dark or light theme toggle"
+          >
+            <span id="lightIcon" class="material-symbols-rounded"
+              >brightness_4</span
+            >
+            <span id="darkIcon" class="material-symbols-rounded hidden"
+              >brightness_low</span
+            >
           </button>
         </nav>
       </div>
     </header>
 
-    <main class="flex flex-col items-center justify-center mx-auto px-4 h-auto my-8">
-      <h1 id="animatedHeading" class="text-4xl font-extrabold text-center text-transparent bg-clip-text animate-gradient-xy capitalize leading-relaxed light-mode-gradient">Register a new user
+    <main
+      class="mx-auto my-8 flex h-auto flex-col items-center justify-center px-4"
+    >
+      <h1
+        id="animatedHeading"
+        class="light-mode-gradient animate-gradient-xy bg-clip-text text-center text-4xl font-extrabold capitalize leading-relaxed text-transparent"
+      >
+        Register a new user
       </h1>
       <div class="flex flex-col">
         <form name="register" id="registerForm">
-          <div class="flex flex-col gap-2 my-8 justify-center">
-            <label class="text-text-dark font-medium" for="name">Username</label>
-            <input class="input-default" id="name"
-            type="text"
-            name="name"
-            maxlength="20"
-            pattern="^[\w]+$"
-            title="Please enter a username using only letters and numbers"
-            placeholder="user_123"
-            required/>
+          <div class="my-8 flex flex-col justify-center gap-2">
+            <label class="font-medium text-text-dark" for="name"
+              >Username</label
+            >
+            <input
+              class="input-default"
+              id="name"
+              type="text"
+              name="name"
+              maxlength="20"
+              pattern="^[\w]+$"
+              title="Please enter a username using only letters and numbers"
+              placeholder="user_123"
+              required
+            />
           </div>
 
-          <div class="flex flex-col gap-2 my-8">
-            <label class="text-text-dark font-medium" for="email">Email</label>
-            <input class="input-default" id="email" type="email" name="email" placeholder="student@stud.noroff.no" pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-            title="Please enter a valid noroff.no or stud.noroff.no address"
-            required/>
+          <div class="my-8 flex flex-col gap-2">
+            <label class="font-medium text-text-dark" for="email">Email</label>
+            <input
+              class="input-default"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="student@stud.noroff.no"
+              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              title="Please enter a valid noroff.no or stud.noroff.no address"
+              required
+            />
           </div>
-        
-          <div class="flex flex-col gap-3 my-8">
-            <label class="text-text-dark font-medium" for="password">Password</label>
-            <input class="input-default" type="password" name="password" id="password" placeholder="*******"
-            minlength="8" 
-            required/>
+
+          <div class="my-8 flex flex-col gap-3">
+            <label class="font-medium text-text-dark" for="password"
+              >Password</label
+            >
+            <input
+              class="input-default"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="*******"
+              minlength="8"
+              required
+            />
           </div>
           <div class="flex flex-col gap-4">
             <button class="btn-primary mt-2" type="submit">Register</button>
-            <h2 class="text-xl font-semibold mt-8 text-center">Already a user?</h2>
+            <h2 class="mt-8 text-center text-xl font-semibold">
+              Already a user?
+            </h2>
             <a class="btn-secondary" href="/auth/login/">Login</a>
           </div>
         </form>

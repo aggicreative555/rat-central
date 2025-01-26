@@ -4,7 +4,7 @@ export function initializeRegister() {
   try {
     onRegister();
   } catch {
-    console.error('Error initializing register function.')
+    console.error("Error initializing register function.");
   }
 }
 

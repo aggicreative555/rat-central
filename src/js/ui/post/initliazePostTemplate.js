@@ -1,5 +1,3 @@
-import { renderPostTemplate } from "../../ui/post/postTemplate";
-import { readPost } from "../../api/post/read";
 import { readMultiplePosts } from "../../api/post/read";
 import { renderMultiplePosts } from "../../ui/post/postTemplate";
 
@@ -16,10 +14,8 @@ export async function initializePostsPage(postsContainer) {
   try {
     const { data: posts } = await readMultiplePosts(12, 1);
     renderMultiplePosts(posts, postsContainer);
-    
   } catch (error) {
     console.error("Error fetching multiple posts:", error);
     postsContainer.innerHTML = `<p>Failed to load posts. Please try again later or refresh the page.</p>`;
   }
-
 }

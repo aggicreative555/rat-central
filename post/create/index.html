@@ -22,60 +22,150 @@
     />
   </head>
   <body class="bg-background-light text-text-dark">
-    <header class="w-full flex justify-center">
-      <div class="py-4 px-10 h-fit w-screen m-4 flex justify-between content-center font-semibold text-lg">
+    <header class="flex w-full justify-center">
+      <div
+        class="m-4 flex h-fit w-screen content-center justify-between px-10 py-4 text-lg font-semibold"
+      >
         <div class="flex justify-start">
-          <a href="./index.html" class="align-center" title="Home" aria-label="Home link"><img src="/images/logo-full.svg" alt="Rat Central Logo"/></a>
+          <a
+            href="./index.html"
+            class="align-center"
+            title="Home"
+            aria-label="Home link"
+            ><img src="/images/logo-full.svg" alt="Rat Central Logo"
+          /></a>
         </div>
-        <div class="lg:hidden justify-end content-center m-4 right-20" id="toggleBtn">
-          <button id="hamburger" class="transition-all duration-300 ease-in-out" >
+        <div
+          class="right-20 m-4 content-center justify-end lg:hidden"
+          id="toggleBtn"
+        >
+          <button
+            id="hamburger"
+            class="transition-all duration-300 ease-in-out"
+          >
             <span class="material-symbols-rounded text-4xl">menu</span>
           </button>
-          <button id="closeBtn" class="hidden transition-all duration-300 ease-in-out">
+          <button
+            id="closeBtn"
+            class="hidden transition-all duration-300 ease-in-out"
+          >
             <span class="material-symbols-rounded text-4xl">close</span>
           </button>
         </div>
-        <nav class="content-center hidden animate-fade-in" id="navToggler">
-          <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
-          <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
-          <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
-          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
-            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
-            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
+        <nav class="hidden animate-fade-in content-center" id="navToggler">
+          <a
+            href="/post/"
+            title="Explore page"
+            aria-label="Explore page"
+            class="link"
+            >Explore</a
+          >
+          <a
+            href="/auth/login/"
+            title="Login page"
+            aria-label="Login page"
+            class="btn-accent"
+            >Login</a
+          >
+          <a
+            href="/auth/register/"
+            title="Register page"
+            aria-label="Register page"
+            class="link"
+            >Register</a
+          >
+          <button
+            id="modeToggler"
+            title="Dark/light theme button"
+            aria-label="Dark or light theme toggle"
+          >
+            <span id="lightIcon" class="material-symbols-rounded"
+              >brightness_4</span
+            >
+            <span id="darkIcon" class="material-symbols-rounded hidden"
+              >brightness_low</span
+            >
           </button>
         </nav>
       </div>
     </header>
     <main>
-      <h1 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient">Create a Post</h1>
+      <h1
+        id="animatedHeading"
+        class="light-mode-gradient animate-gradient-xy bg-clip-text text-center font-display text-4xl text-transparent md:text-6xl"
+      >
+        Create a Post
+      </h1>
 
-      <div class="flex mb-20 w-screen justify-center">
-        <form name="createPost" id="createPost" class="w-fit flex flex-col gap-10 mt-10">
+      <div class="mb-20 flex w-screen justify-center">
+        <form
+          name="createPost"
+          id="createPost"
+          class="mt-10 flex w-fit flex-col gap-10"
+        >
           <div class="flex flex-col gap-2">
-            <label for="title" class="text-text-dark font-medium"  >Post Title</label>
-            <input class="input-default" type="text" name="title" placeholder="Title">
+            <label for="title" class="font-medium text-text-dark"
+              >Post Title</label
+            >
+            <input
+              class="input-default"
+              type="text"
+              name="title"
+              placeholder="Title"
+            />
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="content" class="text-text-dark font-medium" >Content</label>
-            <textarea class="input-default" name="content" placeholder="Content" cols="30" rows="10"></textarea>
+            <label for="content" class="font-medium text-text-dark"
+              >Content</label
+            >
+            <textarea
+              class="input-default"
+              name="content"
+              placeholder="Content"
+              cols="30"
+              rows="10"
+            ></textarea>
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="url" class="text-text-dark font-medium" >Add image url</label>
-            <input class="input-default" type="url" name="url"  placeholder="url">
+            <label for="url" class="font-medium text-text-dark"
+              >Add image url</label
+            >
+            <input
+              class="input-default"
+              type="url"
+              name="url"
+              placeholder="url"
+            />
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="alt" class="text-text-dark font-medium" >Add image alt text</label>
-            <input class="input-default" type="text" name="alt" placeholder="alt">
+            <label for="alt" class="font-medium text-text-dark"
+              >Add image alt text</label
+            >
+            <input
+              class="input-default"
+              type="text"
+              name="alt"
+              placeholder="alt"
+            />
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="tags" class="text-text-dark font-medium" >Add tags</label>
-            <input class="input-default" type="text" name="tags" placeholder="tag 1, tag 2">
+            <label for="tags" class="font-medium text-text-dark"
+              >Add tags</label
+            >
+            <input
+              class="input-default"
+              type="text"
+              name="tags"
+              placeholder="tag 1, tag 2"
+            />
           </div>
-          <button type="submit" class="btn-primary my-10 w-full">Create Post</button>
+          <button type="submit" class="btn-primary my-10 w-full">
+            Create Post
+          </button>
         </form>
       </div>
     </main>

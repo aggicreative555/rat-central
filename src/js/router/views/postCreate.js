@@ -1,8 +1,7 @@
 import { onCreatePost } from "../../ui/post/create";
 import { authGuard } from "../../utilities/authGuard";
 
-function initializePostCreate () {
-
+function initializePostCreate() {
   authGuard();
 
   const form = document.querySelector("#createPost");

@@ -4,12 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   onLogin();
 });
 
-export function initializeLogin () {
+export function initializeLogin() {
   try {
     onLogin();
-
   } catch {
-    console.error('Error loading login functionality.');
+    console.error("Error loading login functionality.");
   }
 }
 

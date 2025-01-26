@@ -15,8 +15,7 @@ import { onDeletePost } from "../../ui/post/delete";
  *
  */
 
-function initializePostEdit () {
-
+function initializePostEdit() {
   authGuard();
 
   const params = new URL(document.location).searchParams;
@@ -49,7 +48,6 @@ function initializePostEdit () {
       "Delete button not found. Verify the `id` attribute and ensure it is loaded in the DOM.",
     );
   }
-
 }
 
 initializePostEdit();

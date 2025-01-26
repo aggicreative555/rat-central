@@ -23,36 +23,89 @@
     />
   </head>
   <body class="bg-background-light text-text-dark">
-    <header class="w-full flex justify-center">
-      <div class="py-4 px-10 h-fit w-screen m-4 flex justify-between content-center font-semibold text-lg">
+    <header class="flex w-full justify-center">
+      <div
+        class="m-4 flex h-fit w-screen content-center justify-between px-10 py-4 text-lg font-semibold"
+      >
         <div class="flex justify-start">
-          <a href="./index.html" class="align-center" title="Home" aria-label="Home link"><img src="/images/logo-full.svg" alt="Rat Central Logo"/></a>
+          <a
+            href="./index.html"
+            class="align-center"
+            title="Home"
+            aria-label="Home link"
+            ><img src="/images/logo-full.svg" alt="Rat Central Logo"
+          /></a>
         </div>
-        <div class="lg:hidden justify-end content-center m-4 right-20" id="toggleBtn">
-          <button id="hamburger" class="transition-all duration-300 ease-in-out" >
+        <div
+          class="right-20 m-4 content-center justify-end lg:hidden"
+          id="toggleBtn"
+        >
+          <button
+            id="hamburger"
+            class="transition-all duration-300 ease-in-out"
+          >
             <span class="material-symbols-rounded text-4xl">menu</span>
           </button>
-          <button id="closeBtn" class="hidden transition-all duration-300 ease-in-out">
+          <button
+            id="closeBtn"
+            class="hidden transition-all duration-300 ease-in-out"
+          >
             <span class="material-symbols-rounded text-4xl">close</span>
           </button>
         </div>
-        <nav class="content-center hidden animate-fade-in" id="navToggler">
-          <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
-          <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
-          <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
-          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
-            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
-            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
+        <nav class="hidden animate-fade-in content-center" id="navToggler">
+          <a
+            href="/post/"
+            title="Explore page"
+            aria-label="Explore page"
+            class="link"
+            >Explore</a
+          >
+          <a
+            href="/auth/login/"
+            title="Login page"
+            aria-label="Login page"
+            class="btn-accent"
+            >Login</a
+          >
+          <a
+            href="/auth/register/"
+            title="Register page"
+            aria-label="Register page"
+            class="link"
+            >Register</a
+          >
+          <button
+            id="modeToggler"
+            title="Dark/light theme button"
+            aria-label="Dark or light theme toggle"
+          >
+            <span id="lightIcon" class="material-symbols-rounded"
+              >brightness_4</span
+            >
+            <span id="darkIcon" class="material-symbols-rounded hidden"
+              >brightness_low</span
+            >
           </button>
         </nav>
       </div>
     </header>
     <main class="flex flex-col">
       <div id="mutiplePostsContent" class="block">
-        <h1 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient">Explore</h1>
-        <div id="searchBar" class="flex justify-center m-10 p-5 gap-8">
-          <div class=" flex flex-col md:flex-row md:rounded-full gap-10 border-solid border-2 border-brown-700/20 dark:bg-brown-500 dark:text-text-light py-2 px-2 text-center rounded-md font-semibold capitalize">
-            <select id="searchType" class="text-text-dark px-5 font-semibold bg-transparent p-4">
+        <h1
+          id="animatedHeading"
+          class="light-mode-gradient animate-gradient-xy bg-clip-text text-center font-display text-4xl text-transparent md:text-6xl"
+        >
+          Explore
+        </h1>
+        <div id="searchBar" class="m-10 flex justify-center gap-8 p-5">
+          <div
+            class="flex flex-col gap-10 rounded-md border-2 border-solid border-brown-700/20 px-2 py-2 text-center font-semibold capitalize md:flex-row md:rounded-full dark:bg-brown-500 dark:text-text-light"
+          >
+            <select
+              id="searchType"
+              class="bg-transparent p-4 px-5 font-semibold text-text-dark"
+            >
               <option value="title" selected disabled>Search by</option>
               <option value="title">Title</option>
               <option value="tag">Tag</option>
@@ -61,16 +114,23 @@
               type="text"
               id="searchQuery"
               placeholder="Enter your search query"
-              class="placeholder:text-brown-500 bg-transparent m-3 p-4 md:p-2 rounded-full"
+              class="m-3 rounded-full bg-transparent p-4 placeholder:text-brown-500 md:p-2"
             />
-            <button id="searchButton" class="btn-accent hover:text-text-light">Search
+            <button id="searchButton" class="btn-accent hover:text-text-light">
+              Search
             </button>
           </div>
         </div>
-        <div class="flex justify-center m-8"><a href="/post/create/" class="btn-accent">Post Something<span class="material-symbols-rounded text-center align-middle pl-2">add</span></a></div>
+        <div class="m-8 flex justify-center">
+          <a href="/post/create/" class="btn-accent"
+            >Post Something<span
+              class="material-symbols-rounded pl-2 text-center align-middle"
+              >add</span
+            ></a
+          >
+        </div>
       </div>
 
-  
       <div id="postsContainer" class="posts-container"></div>
     </main>
     <script type="module" src="../src/app.js"></script>

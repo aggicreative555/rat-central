@@ -1,10 +1,9 @@
 console.log("Current pathname:", window.location.pathname);
 
-import "./css/style.css";
+import "./src/css/style.css";
 import router from "./js/router/index.js";
 import { updateNavLinks } from "./js/ui/global/updateNavLinks.js";
 import { setNavToggler } from "./js/utilities/navToggler.js";
-
 
 document.addEventListener("DOMContentLoaded", () => {
   try {
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch (error) {
     console.error("Error updating nav links", error);
   }
-  
+
   try {
     setNavToggler();
   } catch (error) {

@@ -37,6 +37,8 @@ export function toggleMode() {
             
             const activeIcon = isDarkMode ? iconDarkMode : iconLightMode;
             const inactiveIcon = isDarkMode ? iconLightMode : iconDarkMode; 
+
+            const darkModeLogo = document.getElementById("logo");
             
             localStorage.setItem("theme", isDarkMode ? 'dark' : 'light');
 
@@ -48,9 +50,13 @@ export function toggleMode() {
             if (isDarkMode) {
                 animatedHeading.classList.remove('light-mode-gradient');
                 animatedHeading.classList.add('dark-mode-gradient');
+                animatedHeading.classList.add('dark-mode-gradient');
+                darkModeLogo.src="/public/images/logo-full-01-dark.svg";
             } else {
                 animatedHeading.classList.remove('dark-mode-gradient');
                 animatedHeading.classList.add('light-mode-gradient');
+                darkModeLogo.src="/public/images/logo-full-01.svg";
+                
             }
 
             setTimeout(() => {
@@ -61,7 +67,7 @@ export function toggleMode() {
         });
 
 
-    } catch {
+    } catch (error) {
         console.error('Error implementing mode toggler.', error);
     }
 }

@@ -22,6 +22,7 @@ ol {
 html,
 body {
   height: 100%; 
+  overflow-x: hidden;
 
   -webkit-font-smoothing: always;
   font-feature-settings: normal;

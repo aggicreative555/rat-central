@@ -161,13 +161,13 @@ export function renderPostTemplate(postData, parent) {
   const data = postData.data || postData;
 
   const post = document.createElement("div");
-  post.className = "flex flex-col w-full";
+  post.className = "flex flex-col w-full h-fit lg:flex-row lg:w-[1022px] cursor-default lg:gap-4";
 
 
   // Add go back function
 
   const backContainer = document.createElement("a");
-  backContainer.className = "flex flex-row-reverse gap-2 justify-end items-center my-4 mx-4 text-text-dark text-lg font-semibold transition-all hover:text-brown-400 hover:font-bold hover:mx-2";
+  backContainer.className = "flex flex-row-reverse gap-2 w-full justify-end items-center my-10 px-8 text-text-dark text-lg font-semibold transition-all hover:text-brown-400 hover:font-bold hover:px-2";
   backContainer.textContent = "Back";
 
   const backIcon = document.createElement("span");
@@ -176,11 +176,11 @@ export function renderPostTemplate(postData, parent) {
   backContainer.appendChild(backIcon);
 
 
-  post.appendChild(backContainer);
+  parent.appendChild(backContainer);
 
   
   const imageContainer = document.createElement("div");
-  imageContainer.className = "w-full h-full bg-cover bg-center h-96";
+  imageContainer.className = "w-full h-full bg-cover bg-center min-h-96 lg:max-w-96 lg:rounded-md hover:bg-blend-overlay hover:bg-brown-800/60 transition-all duration-300 ease-in-out";
   
   // Add media if available
 
@@ -198,7 +198,7 @@ export function renderPostTemplate(postData, parent) {
   // Add comments
 
   const interactiveContainer = document.createElement("div");
-  interactiveContainer.className = "flex flex-row-reverse justify-end gap-8 text-brown-400 font-semibold";
+  interactiveContainer.className = "flex flex-row-reverse justify-end gap-8 text-brown-400 font-semibold cursor-pointer";
 
   contentContainer.appendChild(interactiveContainer);
 
@@ -237,7 +237,7 @@ export function renderPostTemplate(postData, parent) {
 
   // Add title
   const title = document.createElement("h1");
-  title.className = "text-5xl font-bold text-text-dark pt-4";
+  title.className = "text-3xl lg:text-5xl font-bold text-text-dark pt-4";
   title.textContent = data.title || "";
 
   contentContainer.appendChild(title);
@@ -245,7 +245,7 @@ export function renderPostTemplate(postData, parent) {
 
   // Add author
   const username = document.createElement('h2');
-  username.className = 'text-sm text-brown-900/60 ';
+  username.className = 'text-sm text-brown-900/60 hover:font-medium cursor-pointer';
   username.textContent = `${data.author || "anonymous"}`;
   contentContainer.appendChild(username);
 
@@ -253,13 +253,13 @@ export function renderPostTemplate(postData, parent) {
   
   const description = document.createElement("p");
   description.className = "text-md text-text-dark py-4";
-  description.textContent = "i found a loop hole to get into this french restaurant, where they have unlimited cheese & grapes.bro’s working there apparently. apparently he controls a socially awkward dude through. anyways, me and the gang came over and bro got us stacked with cheese and grapes. ";
+  description.textContent = data.body || "";
   contentContainer.appendChild(description);
 
-    // Add tags 
+  // Add tags 
 
   const tags = document.createElement("p");
-  tags.className = 'text-brown-900/60 text-sm italic'
+  tags.className = 'text-brown-900/60 text-sm italic lg:mt-auto hover:underline hover:font-medium cursor-pointer'
   tags.innerText = `${data.tags.map(tag => `#${tag}`).join(", ")}`;
   contentContainer.appendChild(tags);
 

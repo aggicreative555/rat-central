@@ -33,29 +33,31 @@
         </nav>
       </div>
     </header>
-    <main>
-      <h1 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient">Explore</h1>
-      <div id="searchBar" class="flex justify-center m-10 p-5 gap-8">
-        <div class=" flex flex-col md:flex-row md:rounded-full gap-10 border-solid border-2 border-brown-700/20 dark:bg-brown-500 dark:text-text-light py-2 px-2 text-center rounded-md font-semibold capitalize">
-          <select id="searchType" class="text-text-dark px-5 font-semibold bg-transparent p-4">
-            <option value="title" selected disabled>Search by</option>
-            <option value="title">Title</option>
-            <option value="tag">Tag</option>
-          </select>
-          <input
-            type="text"
-            id="searchQuery"
-            placeholder="Enter your search query"
-            class="placeholder:text-brown-500 bg-transparent m-3 p-4 md:p-2 rounded-full"
-          />
-          <button id="searchButton" class="btn-accent hover:text-text-light">Search
-          </button>
+    <main class="flex flex-col">
+      <div id="mutiplePostsContent" class="block">
+        <h1 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient">Explore</h1>
+        <div id="searchBar" class="flex justify-center m-10 p-5 gap-8">
+          <div class=" flex flex-col md:flex-row md:rounded-full gap-10 border-solid border-2 border-brown-700/20 dark:bg-brown-500 dark:text-text-light py-2 px-2 text-center rounded-md font-semibold capitalize">
+            <select id="searchType" class="text-text-dark px-5 font-semibold bg-transparent p-4">
+              <option value="title" selected disabled>Search by</option>
+              <option value="title">Title</option>
+              <option value="tag">Tag</option>
+            </select>
+            <input
+              type="text"
+              id="searchQuery"
+              placeholder="Enter your search query"
+              class="placeholder:text-brown-500 bg-transparent m-3 p-4 md:p-2 rounded-full"
+            />
+            <button id="searchButton" class="btn-accent hover:text-text-light">Search
+            </button>
+          </div>
         </div>
+        <div class="flex justify-center m-8"><a href="/post/create/" class="btn-accent">Post Something<span class="material-symbols-rounded text-center align-middle pl-2">add</span></a></div>
       </div>
-      <div class="flex justify-center m-8"><a href="/post/create/" class="btn-accent">Post Something<span class="material-symbols-rounded text-center align-middle pl-2">add</span></a></div>
 
   
-      <div id="postsContainer" class="mt-14 mx-5 h-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center align-middle transition-all"></div>
+      <div id="postsContainer" class="posts-container"></div>
     </main>
     <script type="module" src="../src/app.js"></script>
     <script type="module" src="../src/js/router/views/post.js"></script>

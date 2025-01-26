@@ -61,7 +61,7 @@
 }
 
 .single-post {
-    @apply flex h-fit;
+    @apply flex h-fit w-full flex-col lg:mx-10 my-10 items-center justify-center transition-all duration-500;
 
 }
 

@@ -82,10 +82,9 @@ export default defineConfig({
 
 [_Full process on tailwind docs_](https://tailwindcss.com/docs/installation/using-vite)
 
-
 # Environment variables
-The development server runs on PORT=3000. Update it in your .env file if necessary.
 
+The development server runs on PORT=3000. Update it in your .env file if necessary.
 
 ## Project Scripts :
 
@@ -97,13 +96,11 @@ The development server runs on PORT=3000. Update it in your .env file if necessa
 npm run dev
 ```
 
-
 **2. Build for production:**
 
 ```bash
 npm run build
 ```
-
 
 **3. Run linting checks:**
 
@@ -145,7 +142,6 @@ npm run dev
 npm run build
 ```
 
-
 ## Contributions Guidelines:
 
 1. To contribute, **fork** the repository.
@@ -162,11 +158,11 @@ git checkout -b fork/your-fork-name
 git commit -m "Your commit message"
 ```
 
- 5. Submit a **PR** for review.
+5.  Submit a **PR** for review.
 
 ### License:
 
-This project uses an **ISC** license. 
+This project uses an **ISC** license.
 
 ### Acknowledgements:
 

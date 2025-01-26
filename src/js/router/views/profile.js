@@ -2,8 +2,7 @@ import { authGuard } from "../../utilities/authGuard";
 import { load } from "../../utilities/authGuard";
 import { setLogoutListener } from "../../ui/global/logout";
 
-export function initializeProfilePage () {
-
+export function initializeProfilePage() {
   try {
     authGuard();
   } catch (error) {
@@ -11,18 +10,15 @@ export function initializeProfilePage () {
   }
 
   try {
-    const user = load('user');
+    const user = load("user");
     const profile = user.name;
     const email = user.email;
-    const title = document.querySelector('h2');
+    const title = document.querySelector("h2");
     title.textContent = `${profile}`;
-    const emailAccount = document.getElementById('emailAccount');
+    const emailAccount = document.getElementById("emailAccount");
     emailAccount.textContent = `${email}`;
-    
-
   } catch (error) {
-    console.error('Error loading profile page.', error);
-
+    console.error("Error loading profile page.", error);
   }
 
   try {

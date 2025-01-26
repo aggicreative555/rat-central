@@ -47,7 +47,6 @@ export function onLogin() {
       }
     });
   } else {
-    console.error('Error submitting login information');
+    console.error("Error submitting login information");
   }
-
 }

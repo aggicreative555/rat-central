@@ -8,27 +8,20 @@
     "dev": "vite --port 3000",
     "build": "vite build",
     "preview": "vite preview",
-<<<<<<< HEAD
     "lint": "eslint . --cache --fix",
     "prettier": "prettier --write .",
     "format": "npm run prettier && npm run lint",
     "build-css": "npx tailwindcss-cli@latest build -i ./src/css/style.css -o ./src/css/output.css"
-=======
-    "start": "node server.js",
-    "watch": "npx tailwindcss -i ./src/css/style.css -o ./src/css/output.css --watch",
-    "minify": "npx tailwindcss -i ./src/css/style.css -o ./src/css/output.css --minify"
->>>>>>> parent of ab82f9e (fix(scripts): fixed scripts, deleted output, added tailwind/vite plugin)
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
-    "@tailwindcss/postcss": "^4.0.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "globals": "^15.14.0",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
-    "tailwindcss": "^4.0.0",
+    "tailwindcss": "^3.4.17",
     "vite": "^6.0.11"
   },
   "keywords": [],
@@ -38,11 +31,8 @@
     "*.js": "eslint --cache --fix",
     "*.{css,md, html}": "prettier --write",
     "*.{js,css,md}": "prettier --write"
-<<<<<<< HEAD
   },
   "dependencies": {
     "postcss": "^8.5.1"
-=======
->>>>>>> parent of ab82f9e (fix(scripts): fixed scripts, deleted output, added tailwind/vite plugin)
   }
 }

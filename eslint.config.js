@@ -13,7 +13,11 @@ export default [
     },
   },
   pluginJs.configs.recommended,
+<<<<<<< HEAD
 ];
 
 
 
+=======
+];
+>>>>>>> parent of ab82f9e (fix(scripts): fixed scripts, deleted output, added tailwind/vite plugin)

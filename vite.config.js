@@ -1,9 +1,11 @@
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
+import { resolve } from "path";
 import { defineConfig } from "vite";
+<<<<<<< HEAD
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+=======
+>>>>>>> parent of ab82f9e (fix(scripts): fixed scripts, deleted output, added tailwind/vite plugin)
 
 export default defineConfig({
   appType: "mpa",
@@ -27,5 +29,8 @@ export default defineConfig({
       },
     },
   },
+<<<<<<< HEAD
   plugins: ['./postcss.config.js',],
+=======
+>>>>>>> parent of ab82f9e (fix(scripts): fixed scripts, deleted output, added tailwind/vite plugin)
 });

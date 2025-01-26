@@ -42,7 +42,7 @@ git clone https://github.com/aggicreative555/rat-central.git
 
 This project uses several dependencies for development and testing. Here is the list of all dependencies used:
 
-- **Vite**: Code compiler.
+- **Vite**: Code compiler
 - **Eslint**: Code linting
 - **Prettier**: Code formatting
 - **Tailwindcss**: Styling
@@ -59,14 +59,38 @@ npm install
 npm list
 ```
 
-# Port for the application to run on
-PORT=3000
+# Tailwind/vite plugin
+
+**1. Install tailwind/vite plugin:**
+
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+**2. Add plugin to vite.config:**
+
+```json
+
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
+
+```
+
+[_Full process on tailwind docs_](https://tailwindcss.com/docs/installation/using-vite)
+
+
+# Environment variables
+The development server runs on PORT=3000. Update it in your .env file if necessary.
 
 
 ## Project Scripts :
 
 ### Terminal commands:
-
 
 **1. Run the developement server:**
 
@@ -135,7 +159,11 @@ git checkout -b fork/your-fork-name
 
 3. **Commit** your changes.
 
- 4. Submit a **PR** for review.
+```bash
+git commit -m "Your commit message"
+```
+
+ 5. Submit a **PR** for review.
 
 ### License:
 

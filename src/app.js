@@ -1,6 +1,6 @@
 console.log("Current pathname:", window.location.pathname);
 
-import "./src/css/style.css";
+import "./css/style.css";
 import router from "./js/router/index.js";
 import { updateNavLinks } from "./js/ui/global/updateNavLinks.js";
 import { setNavToggler } from "./js/utilities/navToggler.js";

@@ -5,6 +5,41 @@
 @tailwind components;
 @tailwind utilities;
 
+.slideUp-animation {
+    animation: fadeSlideUp 4s infinite ease-in-out; 
+}
+
+#post1 {
+    animation-delay: 50ms;
+  }
+  
+#post2 {
+animation-delay: 250ms; 
+}
+
+#post3 {
+animation-delay: 500ms; 
+}
+
+@keyframes fadeSlideUp {
+    0% {
+    opacity: 0;
+    transform: translateY(40%);
+    }
+    20% {
+    opacity: 1;
+    transform: translateY(2%);
+    }
+    65% {
+    opacity: 1;
+    transform: translateY(2%);
+    }
+    100% {
+    opacity: 0;
+    transform: translateY(-10%);
+    }
+}
+
 @layer components {
 /* Base button styles */
 
@@ -54,6 +89,11 @@
 
 }
 
+.display-gradient {
+    @apply bg-gradient-to-tr from-orange-100 to-orange-500;
+
+}
+
 /* Posts */
 
 .posts-container {
@@ -66,4 +106,7 @@
 }
 
 }
+
+
+
 

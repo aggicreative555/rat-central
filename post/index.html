@@ -49,20 +49,10 @@
     </header>
     <main class="flex flex-col">
       <div id="mutiplePostsContent" class="block">
-        <h1
-          id="animatedHeading"
-          class="light-mode-gradient animate-gradient-xy font-display bg-clip-text text-center text-4xl text-transparent md:text-6xl"
-        >
-          Explore
-        </h1>
-        <div id="searchBar" class="m-10 flex justify-center gap-8 p-5">
-          <div
-            class="border-brown-700/20 dark:bg-brown-500 dark:text-text-light flex flex-col gap-10 rounded-md border-2 border-solid px-2 py-2 text-center font-semibold capitalize md:flex-row md:rounded-full"
-          >
-            <select
-              id="searchType"
-              class="text-text-dark bg-transparent p-4 px-5 font-semibold"
-            >
+        <h1 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient">Explore</h1>
+        <div id="searchBar" class="flex justify-center m-10 p-5 gap-8">
+          <div class=" flex flex-col md:flex-row md:rounded-full gap-10 border-solid border-2 border-brown-700/20 dark:bg-brown-500 dark:text-text-light py-2 px-2 text-center rounded-md font-semibold capitalize">
+            <select id="searchType" class="text-text-dark px-5 font-semibold bg-transparent p-4">
               <option value="title" selected disabled>Search by</option>
               <option value="title">Title</option>
               <option value="tag">Tag</option>

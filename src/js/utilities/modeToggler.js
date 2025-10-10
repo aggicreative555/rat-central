@@ -1,67 +1,63 @@
-function applyInitialTheme(){
-    const userPreferance = localStorage.getItem("theme");
+let modeTogglerInitialized = false;
 
-    const systemPreferenceIsDark = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-    ).matches;
+function applyInitialTheme() {
+  const userPreference = localStorage.getItem("theme");
+  const systemPreferenceIsDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const isDarkMode = userPreference === "dark" || (!userPreference && systemPreferenceIsDark);
 
-    const isDarkMode = userPreferance === "dark" || (!userPreferance && systemPreferenceIsDark);
+  document.documentElement.classList.toggle("dark", isDarkMode);
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 
-    document.documentElement.classList.toggle("dark", isDarkMode);
-
-    document.querySelector('#darkIcon').classList.toggle("hidden", isDarkMode);
-    document.querySelector('#lightIcon').classList.toggle("hidden", !isDarkMode);
+  const iconDark = document.getElementById("darkIcon");
+  const iconLight = document.getElementById("lightIcon");
+  if (iconDark && iconLight) {
+    iconDark.classList.toggle("hidden", !isDarkMode);
+    iconLight.classList.toggle("hidden", isDarkMode);
+  }
 }
 
-applyInitialTheme();
-
-
+document.addEventListener("DOMContentLoaded", applyInitialTheme);
 
 export function toggleMode() {
-    
-    try {
-        const modeToggler = document.getElementById("modeToggler");
-        const iconDarkMode = document.getElementById('darkIcon');
-        const iconLightMode = document.getElementById('lightIcon');
-        const animatedHeading = document.getElementById('animatedHeading');
+  try {
+    if (modeTogglerInitialized) return;
+    modeTogglerInitialized = true;
 
-        if (!modeToggler || !iconDarkMode || !iconLightMode) {
-            console.error("Mode toggler or icons not found in the DOM.");
-            return;
-        }
+    const modeToggler = document.getElementById("modeToggler");
+    const iconDarkMode = document.getElementById("darkIcon");
+    const iconLightMode = document.getElementById("lightIcon");
+    const animatedHeading = document.getElementById("animatedHeading");
 
-        
-        modeToggler.addEventListener("click", () => {
-            const htmlElement = document.documentElement;
-            const isDarkMode = htmlElement.classList.toggle("dark");
-            
-            const activeIcon = isDarkMode ? iconDarkMode : iconLightMode;
-            const inactiveIcon = isDarkMode ? iconLightMode : iconDarkMode; 
-            
-            localStorage.setItem("theme", isDarkMode ? 'dark' : 'light');
-
-            activeIcon.classList.remove('hidden');
-            inactiveIcon.classList.add('hidden');
-
-            activeIcon.classList.add('animate-bounce');
-
-            if (isDarkMode) {
-                animatedHeading.classList.remove('light-mode-gradient');
-                animatedHeading.classList.add('dark-mode-gradient');
-            } else {
-                animatedHeading.classList.remove('dark-mode-gradient');
-                animatedHeading.classList.add('light-mode-gradient');
-            }
-
-            setTimeout(() => {
-                activeIcon.classList.remove('animate-bounce');
-
-            }, 500);
-
-        });
-
-
-    } catch {
-        console.error('Error implementing mode toggler.', error);
+    if (!modeToggler || !iconDarkMode || !iconLightMode) {
+      console.error("Mode toggler or icons not found in the DOM.");
+      return;
     }
+
+    modeToggler.addEventListener("click", () => {
+      const htmlElement = document.documentElement;
+
+      const isDarkMode = htmlElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+      
+      const activeIcon = isDarkMode ? iconDarkMode : iconLightMode;
+      const inactiveIcon = isDarkMode ? iconLightMode : iconDarkMode;
+
+      activeIcon.classList.remove("hidden");
+      inactiveIcon.classList.add("hidden");
+
+      activeIcon.classList.add("animate-bounce");
+
+      if (animatedHeading) {
+        animatedHeading.classList.toggle("light-mode-gradient", !isDarkMode);
+        animatedHeading.classList.toggle("dark-mode-gradient", isDarkMode);
+      }
+
+      setTimeout(() => {
+        activeIcon.classList.remove("animate-bounce");
+      }, 300);
+    });
+
+  } catch (error) {
+    console.error("Error implementing mode toggler.", error);
+  }
 }

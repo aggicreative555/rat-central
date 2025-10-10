@@ -44,7 +44,7 @@ animation-delay: 500ms;
 /* Base button styles */
 
 .drop-down {
-    @apply absolute flex flex-col-reverse gap-14 justify-center min-w-80 items-center right-2 z-10 top-16 mt-16 h-fit py-20 px-24 origin-top-right bg-background-light rounded-md shadow-xl shadow-brown-900/20 ring-brown-900/10 ring-1 animate-fade-in;
+    @apply absolute flex flex-col-reverse gap-14 justify-center min-w-80 items-center right-2 z-10 top-16 mt-16 h-fit py-20 px-24 origin-top-right bg-backgroundLight rounded-md shadow-xl shadow-brown-900/20 ring-brown-900/10 ring-1 animate-fade-in;
 }
 
 .nav-bar {

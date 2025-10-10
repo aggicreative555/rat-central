@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rat Central | My profile</title>
-    <meta
-      name="description"
-      content="Looking ratty today! Update your profile for other rats to see!"
-    />
+    <title> Rat Central | My profile </title>
+    <meta name="description" content="Looking ratty today! Update your profile for other rats to see!"/>
+
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,6 +14,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Rat Central" />
     <link rel="manifest" href="/site.webmanifest" />
+
 
     <link href="../src/css/style.css" rel="stylesheet" />
 
@@ -25,96 +24,38 @@
     />
   </head>
   <body class="bg-background-light text-text-dark transition-all duration-300">
-    <header class="flex w-full justify-center">
-      <div
-        class="m-4 flex h-fit w-screen content-center justify-between px-10 py-4 text-lg font-semibold"
-      >
+    <header class="w-full flex justify-center">
+      <div class="py-4 px-10 h-fit w-screen m-4 flex justify-between content-center font-semibold text-lg">
         <div class="flex justify-start">
-          <a
-            href="/"
-            class="align-center"
-            title="Home"
-            aria-label="Home link"
-            id="logo"
-            ><img src="/images/logo-full.svg" alt="Rat Central Logo"
-          /></a>
+          <a href="/" class="align-center" title="Home" aria-label="Home link" id="logo"><img src="/images/logo-full.svg" alt="Rat Central Logo"/></a>
         </div>
-        <div
-          class="right-20 m-4 content-center justify-end lg:hidden"
-          id="toggleBtn"
-        >
-          <button
-            id="hamburger"
-            class="transition-all duration-300 ease-in-out"
-          >
+        <div class="lg:hidden justify-end content-center m-4 right-20" id="toggleBtn">
+          <button id="hamburger" class="transition-all duration-300 ease-in-out" >
             <span class="material-symbols-rounded text-4xl">menu</span>
           </button>
-          <button
-            id="closeBtn"
-            class="hidden transition-all duration-300 ease-in-out"
-          >
+          <button id="closeBtn" class="hidden transition-all duration-300 ease-in-out">
             <span class="material-symbols-rounded text-4xl">close</span>
           </button>
         </div>
-        <nav class="animate-fade-in hidden content-center" id="navToggler">
-          <a
-            href="/post/"
-            title="Explore page"
-            aria-label="Explore page"
-            class="link"
-            >Explore</a
-          >
-          <a
-            href="/auth/login/"
-            title="Login page"
-            aria-label="Login page"
-            class="btn-accent"
-            >Login</a
-          >
-          <a
-            href="/auth/register/"
-            title="Register page"
-            aria-label="Register page"
-            class="link"
-            >Register</a
-          >
-          <button
-            id="modeToggler"
-            title="Dark/light theme button"
-            aria-label="Dark or light theme toggle"
-          >
-            <span id="lightIcon" class="material-symbols-rounded"
-              >brightness_4</span
-            >
-            <span id="darkIcon" class="material-symbols-rounded hidden"
-              >brightness_low</span
-            >
+        <nav class="content-center hidden animate-fade-in" id="navToggler">
+          <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
+          <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
+          <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
+          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
+            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
+            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
           </button>
         </nav>
       </div>
     </header>
     <main class="flex w-screen justify-center">
-      <div class="my-4 flex flex-col text-center">
-        <div
-          class="bg-brown-800/30 shadow-brown-800/20 m-10 mx-auto size-32 rounded-full bg-cover bg-center p-10 shadow-md hover:bg-blend-overlay"
-          id="profilePic"
-        ></div>
-        <h1
-          id="animatedHeading"
-          class="light-mode-gradient animate-gradient-xy font-display bg-clip-text text-center text-xl text-transparent md:text-4xl"
-        >
-          Welcome
-        </h1>
-        <h2
-          id="animatedHeading"
-          class="light-mode-gradient animate-gradient-xy font-display bg-clip-text text-center text-4xl text-transparent md:text-6xl"
-        ></h2>
-        <p id="emailAccount" class="text-brown-800/60 text-sm font-medium"></p>
-        <p
-          class="text-l w-fill text-brown-800/60 hover:border-brown-500 my-10 h-32 rounded-md p-4 transition-all duration-300 hover:border-2"
-        >
-          Write a few words about yourself...
-        </p>
+      <div class="flex flex-col text-center my-4">
+        <div class="size-32 bg-brown-800/30 rounded-full p-10 m-10 mx-auto bg-cover bg-center shadow-md shadow-brown-800/20 hover:bg-blend-overlay" id="profilePic">
+        </div>
+        <h1 id="animatedHeading" class="font-display text-transparent text-center text-xl md:text-4xl bg-clip-text animate-gradient-xy light-mode-gradient">Welcome</h1>
+        <h2 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient"></h2>
+        <p id="emailAccount" class="text-sm font-medium text-brown-800/60"></p>
+        <p class="text-l text-brown-800/60 h-32 w-fill my-10 p-4 hover:border-2 hover:border-brown-500 rounded-md transition-all duration-300">Write a few words about yourself...</p>
         <button class="btn-secondary">Edit Profile</button>
         <button id="logoutButton" class="btn-primary my-10">Log out</button>
       </div>

@@ -47,46 +47,17 @@
           >
             <span class="material-symbols-rounded text-4xl">menu</span>
           </button>
-          <button
-            id="closeBtn"
-            class="hidden transition-all duration-300 ease-in-out"
-          >
+          <button id="closeBtn" class="hidden transition-all duration-300 ease-in-out">
             <span class="material-symbols-rounded text-4xl">close</span>
           </button>
         </div>
-        <nav class="animate-fade-in hidden content-center" id="navToggler">
-          <a
-            href="/post/"
-            title="Explore page"
-            aria-label="Explore page"
-            class="link"
-            >Explore</a
-          >
-          <a
-            href="/auth/login/"
-            title="Login page"
-            aria-label="Login page"
-            class="btn-accent"
-            >Login</a
-          >
-          <a
-            href="/auth/register/"
-            title="Register page"
-            aria-label="Register page"
-            class="link"
-            >Register</a
-          >
-          <button
-            id="modeToggler"
-            title="Dark/light theme button"
-            aria-label="Dark or light theme toggle"
-          >
-            <span id="lightIcon" class="material-symbols-rounded"
-              >brightness_4</span
-            >
-            <span id="darkIcon" class="material-symbols-rounded hidden"
-              >brightness_low</span
-            >
+        <nav class="content-center hidden animate-fade-in" id="navToggler">
+          <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
+          <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
+          <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
+          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
+            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
+            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
           </button>
         </nav>
       </div>

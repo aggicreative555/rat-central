@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rat Central | Explore ultimate rat hacks!</title>
-    <meta
-      name="description"
-      content="Thank you for being a part of rat central! Explore content from the sewers, deeper than the Paris catacombs! "
-    />
+    <title> Rat Central | Explore ultimate rat hacks! </title>
+    <meta name="description" content="Thank you for being a part of rat central! Explore content from the sewers, deeper than the Paris catacombs! "/>
 
+    
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Rat Central" />
     <link rel="manifest" href="/site.webmanifest" />
+
 
     <link href="../src/css/style.css" rel="stylesheet" />
 
@@ -24,69 +23,26 @@
     />
   </head>
   <body class="bg-background-light text-text-dark">
-    <header class="flex w-full justify-center">
-      <div
-        class="m-4 flex h-fit w-screen content-center justify-between px-10 py-4 text-lg font-semibold"
-      >
+    <header class="w-full flex justify-center">
+      <div class="py-4 px-10 h-fit w-screen m-4 flex justify-between content-center font-semibold text-lg">
         <div class="flex justify-start">
-          <a
-            href="./index.html"
-            class="align-center"
-            title="Home"
-            aria-label="Home link"
-            ><img src="/images/logo-full.svg" alt="Rat Central Logo"
-          /></a>
+          <a href="./index.html" class="align-center" title="Home" aria-label="Home link"><img src="/images/logo-full.svg" alt="Rat Central Logo"/></a>
         </div>
-        <div
-          class="right-20 m-4 content-center justify-end lg:hidden"
-          id="toggleBtn"
-        >
-          <button
-            id="hamburger"
-            class="transition-all duration-300 ease-in-out"
-          >
+        <div class="lg:hidden justify-end content-center m-4 right-20" id="toggleBtn">
+          <button id="hamburger" class="transition-all duration-300 ease-in-out" >
             <span class="material-symbols-rounded text-4xl">menu</span>
           </button>
-          <button
-            id="closeBtn"
-            class="hidden transition-all duration-300 ease-in-out"
-          >
+          <button id="closeBtn" class="hidden transition-all duration-300 ease-in-out">
             <span class="material-symbols-rounded text-4xl">close</span>
           </button>
         </div>
-        <nav class="animate-fade-in hidden content-center" id="navToggler">
-          <a
-            href="/post/"
-            title="Explore page"
-            aria-label="Explore page"
-            class="link"
-            >Explore</a
-          >
-          <a
-            href="/auth/login/"
-            title="Login page"
-            aria-label="Login page"
-            class="btn-accent"
-            >Login</a
-          >
-          <a
-            href="/auth/register/"
-            title="Register page"
-            aria-label="Register page"
-            class="link"
-            >Register</a
-          >
-          <button
-            id="modeToggler"
-            title="Dark/light theme button"
-            aria-label="Dark or light theme toggle"
-          >
-            <span id="lightIcon" class="material-symbols-rounded"
-              >brightness_4</span
-            >
-            <span id="darkIcon" class="material-symbols-rounded hidden"
-              >brightness_low</span
-            >
+        <nav class="content-center hidden animate-fade-in" id="navToggler">
+          <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
+          <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
+          <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
+          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
+            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
+            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
           </button>
         </nav>
       </div>

@@ -61,23 +61,16 @@
               type="text"
               id="searchQuery"
               placeholder="Enter your search query"
-              class="placeholder:text-brown-500 m-3 rounded-full bg-transparent p-4 md:p-2"
+              class="placeholder:text-brown-500 bg-transparent m-3 p-4 md:p-2 rounded-full"
             />
-            <button id="searchButton" class="btn-accent hover:text-text-light">
-              Search
+            <button id="searchButton" class="btn-accent hover:text-text-light">Search
             </button>
           </div>
         </div>
-        <div class="m-8 flex justify-center">
-          <a href="/post/create/" class="btn-accent"
-            >Post Something<span
-              class="material-symbols-rounded pl-2 text-center align-middle"
-              >add</span
-            ></a
-          >
-        </div>
+        <div class="flex justify-center m-8"><a href="/post/create/" class="btn-accent">Post Something<span class="material-symbols-rounded text-center align-middle pl-2">add</span></a></div>
       </div>
 
+  
       <div id="postsContainer" class="posts-container"></div>
     </main>
     <script type="module" src="../src/app.js"></script>

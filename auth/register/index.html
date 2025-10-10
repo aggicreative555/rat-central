@@ -57,56 +57,34 @@
       </h1>
       <div class="flex flex-col">
         <form name="register" id="registerForm">
-          <div class="my-8 flex flex-col justify-center gap-2">
-            <label class="text-text-dark font-medium" for="name"
-              >Username</label
-            >
-            <input
-              class="input-default"
-              id="name"
-              type="text"
-              name="name"
-              maxlength="20"
-              pattern="^[\w]+$"
-              title="Please enter a username using only letters and numbers"
-              placeholder="user_123"
-              required
-            />
+          <div class="flex flex-col gap-2 my-8 justify-center">
+            <label class="text-text-dark font-medium" for="name">Username</label>
+            <input class="input-default" id="name"
+            type="text"
+            name="name"
+            maxlength="20"
+            pattern="^[\w]+$"
+            title="Please enter a username using only letters and numbers"
+            placeholder="user_123"
+            required/>
           </div>
 
-          <div class="my-8 flex flex-col gap-2">
+          <div class="flex flex-col gap-2 my-8">
             <label class="text-text-dark font-medium" for="email">Email</label>
-            <input
-              class="input-default"
-              id="email"
-              type="email"
-              name="email"
-              placeholder="student@stud.noroff.no"
-              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-              title="Please enter a valid noroff.no or stud.noroff.no address"
-              required
-            />
+            <input class="input-default" id="email" type="email" name="email" placeholder="student@stud.noroff.no" pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+            title="Please enter a valid noroff.no or stud.noroff.no address"
+            required/>
           </div>
-
-          <div class="my-8 flex flex-col gap-3">
-            <label class="text-text-dark font-medium" for="password"
-              >Password</label
-            >
-            <input
-              class="input-default"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="*******"
-              minlength="8"
-              required
-            />
+        
+          <div class="flex flex-col gap-3 my-8">
+            <label class="text-text-dark font-medium" for="password">Password</label>
+            <input class="input-default" type="password" name="password" id="password" placeholder="*******"
+            minlength="8" 
+            required/>
           </div>
           <div class="flex flex-col gap-4">
             <button class="btn-primary mt-2" type="submit">Register</button>
-            <h2 class="mt-8 text-center text-xl font-semibold">
-              Already a user?
-            </h2>
+            <h2 class="text-xl font-semibold mt-8 text-center">Already a user?</h2>
             <a class="btn-secondary" href="/auth/login/">Login</a>
           </div>
         </form>

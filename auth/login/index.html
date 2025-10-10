@@ -52,34 +52,17 @@
         Login to rat central!
       </h1>
       <div class="flex">
-        <form name="login" id="loginForm" class="w-fit">
-          <div class="my-8 flex flex-col justify-center gap-2">
+        <form name="login" id="loginForm" class=" w-fit">
+          <div class="flex flex-col gap-2 my-8 justify-center">
             <label class="text-text-dark font-medium" for="email">Email</label>
-            <input
-              class="input-default"
-              id="email"
-              type="email"
-              name="email"
-              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-              title="Please enter a valid noroff.no or stud.noroff.no address"
-              placeholder="student@stud.noroff.no"
-              required
-            />
+            <input class="input-default" id="email" type="email" name="email" pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+            title="Please enter a valid noroff.no or stud.noroff.no address"
+            placeholder="student@stud.noroff.no" required />
           </div>
-
-          <div class="my-8 flex flex-col gap-3">
-            <label class="text-text-dark font-medium" for="password"
-              >Password</label
-            >
-            <input
-              class="input-default"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="*******"
-              minlength="8"
-              required
-            />
+  
+          <div class="flex flex-col gap-3 my-8">
+            <label class="text-text-dark font-medium" for="password">Password</label>
+            <input class="input-default" type="password" name="password" id="password" placeholder="*******" minlength="8" required />
           </div>
           <button class="btn-primary my-8" type="submit">Login</button>
         </form>
@@ -89,3 +72,5 @@
     <script type="module" src="/src/app.js"></script>
   </body>
 </html>
+  
+  

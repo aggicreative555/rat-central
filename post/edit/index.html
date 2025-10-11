@@ -25,7 +25,7 @@
     <header class="w-full flex justify-center">
       <div class="py-4 px-10 h-fit w-screen m-4 flex justify-between content-center font-semibold text-lg">
         <div class="flex justify-start">
-          <a href="./index.html" class="align-center" title="Home" aria-label="Home link"><img src="/images/logo-full.svg" alt="Rat Central Logo"/></a>
+          <a href="/" class="align-center" title="Home" aria-label="Home link" id="logo"><img src="/images/logo-full-01.svg" alt="Rat Central Logo"/></a>
         </div>
         <div class="lg:hidden justify-end content-center m-4 right-20" id="toggleBtn">
           <button id="hamburger" class="transition-all duration-300 ease-in-out" >
@@ -47,32 +47,32 @@
       </div>
     </header>
     <main>
-      <h1 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient">Edit Post</h1>
+      <h1 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient dark:dark-mode-gradient">Edit Post</h1>
 
       <div class="flex mb-20 w-screen justify-center">
-        <form name="updatePost" id="updatePost" class="w-fit flex flex-col gap-10 mt-10">
+        <form name="updatePost" id="updatePost" class="w-fit flex flex-col gap-10 mt-10 text-textDark dark:text-textBrown dark:bg-amber-900/20 md:p-20 p-5 ">
           <div class="flex flex-col gap-2">
-            <label for="title" class="text-text-dark font-medium"  >Post Title</label>
+            <label for="title" class="font-medium"  >Post Title</label>
             <input class="input-default" type="text" name="title" placeholder="Title">
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="content" class="text-text-dark font-medium" >Content</label>
+            <label for="content" class="font-medium" >Content</label>
             <textarea class="input-default" name="content" placeholder="Content" cols="30" rows="10"></textarea>
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="url" class="text-text-dark font-medium" >Add image url</label>
+            <label for="url" class="font-medium" >Add image url</label>
             <input class="input-default" type="url" name="url"  placeholder="url">
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="alt" class="text-text-dark font-medium" >Add image alt text</label>
+            <label for="alt" class="font-medium" >Add image alt text</label>
             <input class="input-default" type="text" name="alt" placeholder="alt">
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="tags" class="text-text-dark font-medium" >Add tags</label>
+            <label for="tags" class="font-medium" >Add tags</label>
             <input class="input-default" type="text" name="tags" placeholder="tag 1, tag 2">
           </div>
 

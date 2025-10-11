@@ -1,5 +1,5 @@
 import { getHeaders } from "../headers";
-import { API_SOCIAL_POSTS } from "../constants";
+import { API_KEY, API_SOCIAL_POSTS } from "../constants";
 
 /**
  * Reads a single post by its ID.
@@ -15,13 +15,29 @@ import { API_SOCIAL_POSTS } from "../constants";
  * console.log(post) // Outputs specific id post data.
  */
 
-export async function readPost(id) {
+export async function readPost(id, options = {}) {
   if (!id) {
     throw new Error("Post ID is required.");
   }
 
-  const response = await getHeaders(`${API_SOCIAL_POSTS}/${id}`, {
+  const { author = false, comments = false, reactions = false } = options;
+
+  const queryParams = new URLSearchParams({
+    ...(author && { _author: "true" }),
+    ...(comments && { _comments: "true" }),
+    ...(reactions && { _reactions: "true" }),
+  });
+
+  const url = `${API_SOCIAL_POSTS}/${id}${
+    queryParams.toString() ? `?${queryParams.toString()}` : ""
+  }`;
+
+  const response = await getHeaders(url, {
     method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Noroff-API-Key": API_KEY,
+    },
   });
 
   if (!response.ok) {

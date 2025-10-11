@@ -36,11 +36,16 @@ export async function createPost(title, body, tags, media) {
       title: title,
       body: body || "",
       tags: tags || [],
-      media: media || null,
-    }),
+      media:
+      media && media.url ? {
+          url: media.url.trim(),
+          alt: media.alt?.trim() || "Post image",
+        } : undefined,
+      }),
   });
 
   const post = await response.json();
+  console.log('post:',post);
 
   if (response.ok) {
     const postId = post.data.id;

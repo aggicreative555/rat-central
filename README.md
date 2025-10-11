@@ -1,8 +1,9 @@
 _Noroff Frameworks Assignment_
 
-# 🎨 CSS Frameworks — Frontend Styling Environment
+# 🐀 Rat Central — CSS Frameworks
 
-<img width="1875" height="952" alt="rat central onboarding" src="![alt text](image.png)" />
+<img width="1875" height="952" alt="rat central onboarding" src="<img width="1877" height="957" alt="image" src="https://github.com/user-attachments/assets/0ca5b318-cfeb-4b29-96d0-f04e89ab66dd" />
+" />
 
 ## Description:
 
@@ -17,7 +18,7 @@ This project is a part of my CSS frameworks assingment designed for experimentin
 
 ---
 
-# 🧭 Table of Contents
+# Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)

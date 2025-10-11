@@ -6,8 +6,8 @@ _Noroff Frameworks Assignment_
 
 ## Description:
 
-Welcome to **Rat Central**, a **Social Media** website featuring **API** **CRUD** operations built with **Vanilla JS** and **Tailwind CSS** post animations.
-This project is a part of my CSS frameworks assingment designed for experimenting with and building custom UI layouts using **Vite**, **TailwindCSS**, **PostCSS**, and **Prettier**. enjoy!
+Welcome to **Rat Central**, a **Social Media** website featuring **API** **CRUD** operations built with **Vanilla JS** and **Tailwind CSS**.
+This project is a part of my CSS frameworks assignment designed for experimenting with and building custom UI layouts using **TailwindCSS**, **Vite**. **PostCSS**, and **Prettier**. Enjoy!
 
 ---
 

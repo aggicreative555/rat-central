@@ -6,7 +6,7 @@ import { onLogout } from "../auth/logout";
  * @function setLogoutListener
  * @throws {Error} If the logout button is not found in the DOM.
  *
- */
+*/
 
 export function setLogoutListener() {
   try {

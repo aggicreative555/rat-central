@@ -12,7 +12,7 @@ import { remove } from "../../utilities/authGuard";
 export function onLogout() {
   try {
     remove("accessToken");
-    sessionStorage.removeItem("accessToken");
+    remove("user");
 
     alert("You are now logged out.");
     window.location.href = "/auth/login/";

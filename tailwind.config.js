@@ -6,7 +6,6 @@ export default {
     './index.html',
     "./**/*.html",
     './src/**/*.{js,ts,jsx,tsx}',
-    '!./node_modules/**/*',
   ],
 
   theme: {
@@ -19,8 +18,10 @@ export default {
       colors: {
         backgroundLight: "#FFF9F2",
         backgroundDark: "#260201",
+        backgroundBrown: "#C47650",
         textDark: "#260201",
         textLight: "#FFF9F2",
+        textBrown: "#EDB18C",
 
         brown: {
           100: "#FFF9F2", // Lightest

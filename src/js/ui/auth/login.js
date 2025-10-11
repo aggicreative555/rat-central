@@ -10,6 +10,7 @@ import { login } from "../../api/auth/login";
 
 export function onLogin() {
   const form = document.querySelector("#loginForm");
+  const user = localStorage.getItem('user');
 
   if (form) {
     form.addEventListener("submit", (event) => {
@@ -19,8 +20,13 @@ export function onLogin() {
       const profile = Object.fromEntries(formData);
 
       login(profile);
-      alert("Login successful!");
-      window.location.href = "/post/";
+
+      if (user) {
+        alert('Login successful!')
+        window.location.href = "/post/";
+      } else {
+        console.error('Login failed. Try again later.')
+      }
     });
   } else {
     throw new Error("Login form not found.");

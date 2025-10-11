@@ -10,7 +10,6 @@ export async function initializePostFunctions() {
     const postsContainer = document.querySelector('#postsContainer');
 
     if (!postId) {
-      console.log(window.location.pathname);
       initializeSearch();
       await initializePostsPage(postsContainer);
 

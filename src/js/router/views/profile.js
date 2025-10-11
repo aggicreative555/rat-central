@@ -1,3 +1,4 @@
+import { setLogoutListener } from "../../ui/global/logout";
 import { authGuard } from "../../utilities/authGuard";
 import { load } from "../../utilities/authGuard";
 

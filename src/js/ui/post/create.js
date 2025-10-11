@@ -16,14 +16,18 @@ export async function onCreatePost(event) {
   const formData = new FormData(form);
   const postData = Object.fromEntries(formData.entries());
 
-  const title = postData.title || "";
-  const body = postData.body || "";
+  const title = postData.title?.trim() || "";
+  const body = postData.content?.trim() || "";
   const tags = postData.tags
     ? postData.tags.split(",").map((tag) => tag.trim())
     : [];
-  const media = postData.mediaUrl
-    ? { url: postData.mediaUrl, alt: postData.mediaAlt || "" }
-    : null;
+
+  const media = {
+    url: postData.mediaUrl?.trim() || "",
+    alt: postData.mediaAlt?.trim() || "Post image",
+  };
+
+  console.log(media);
 
   try {
     const newPost = await createPost(title, body, tags, media);

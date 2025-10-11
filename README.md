@@ -2,8 +2,7 @@ _Noroff Frameworks Assignment_
 
 # 🐀 Rat Central — CSS Frameworks
 
-<img width="1875" height="952" alt="rat central onboarding" src="<img src="https://github.com/user-attachments/assets/0ca5b318-cfeb-4b29-96d0-f04e89ab66dd" />
-" />
+<img src="https://github.com/user-attachments/assets/0ca5b318-cfeb-4b29-96d0-f04e89ab66dd" />
 
 ## Description:
 

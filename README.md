@@ -1,90 +1,72 @@
-_Noroff CSS Frameworks Course Assignment_
+_Noroff Frameworks Assignment_
 
-# TailwindCSS
+# 🎨 CSS Frameworks — Frontend Styling Environment
 
----
+<img width="1875" height="952" alt="rat central onboarding" src="![alt text](image.png)" />
 
 ## Description:
 
-The goal of this project is to style the JS2 assignment using **TailwindCSS**.
+Welcome to **Rat Central**, a **Social Media** website featuring **API** **CRUD** operations built with **Vanilla JS** and **Tailwind CSS** post animations.
+This project is a part of my CSS frameworks assingment designed for experimenting with and building custom UI layouts using **Vite**, **TailwindCSS**, **PostCSS**, and **Prettier**. enjoy!
 
-# Table of Contents
+---
 
-- [Installation](#installation-)
+# 🔗 Live Demo:
 
-- [Project Scripts](#project-scripts-)
+> [Enter Rat Central](https://rat-central.netlify.app/)
 
-- [Usage](#usage)
+---
 
-- [Contributing](#contributions-guidelines)
+# 🧭 Table of Contents
 
-- [Ackowledgements](#acknowledgements)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Project Scripts](#project-scripts)
+- [Deployment](#deployment)
+- [Dependencies](#dependencies)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-## Prerequisites :
+---
 
-Before you begin, ensure you have the following installed on your system:
+## Prerequisites
 
-- **Node.js**: v20.11.1 or higher
+Before starting, ensure the following are installed:
 
-- **npm**: v10.9.0 or higher
+- **Node.js**: v18.0.0 or higher
+- **npm**: v10.0.0 or higher
+- **git**: v2.40.0 or higher
 
-- **git**: v2.43.0 or higher
+---
 
-## Installation :
+## Installation
 
-### Cloning the repo:
+### Clone the Repository
 
 ```bash
 git clone https://github.com/aggicreative555/rat-central.git
 ```
 
-### Installing dependencies:
+### Installing dependencies and packages:
 
-This project uses several dependencies for development and testing. Here is the list of all dependencies used:
+This project uses several dependencies and packages for development. Here is the list of all dependencies used:
 
 - **Vite**: Code compiler
+- **Tailwind**: Styling
 - **Eslint**: Code linting
 - **Prettier**: Code formatting
-- **Tailwindcss**: Styling
 
-**1. Run the following commands to install them:**
+**1. Run the following commands to install all dependencies:**
 
 ```bash
 npm install
 ```
 
-**2. After installation, ensure all dependencies are installed properly:**
+**2. After installation, ensure all dependencies and packages are installed properly:**
 
 ```bash
 npm list
 ```
-
-# Tailwind/vite plugin
-
-**1. Install tailwind/vite plugin:**
-
-```bash
-npm install tailwindcss @tailwindcss/vite
-```
-
-**2. Add plugin to vite.config:**
-
-```json
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
-
-export default defineConfig({
-  plugins: [
-    tailwindcss(),
-  ],
-})
-```
-
-[_Full process on tailwind docs_](https://tailwindcss.com/docs/installation/using-vite)
-
-# Environment variables
-
-The development server runs on PORT=3000. Update it in your .env file if necessary.
 
 ## Project Scripts :
 
@@ -102,63 +84,73 @@ npm run dev
 npm run build
 ```
 
-**3. Run linting checks:**
+**3. Preview:**
+
+```bash
+npm run preview
+```
+
+**4. Run linting checks:**
 
 ```bash
 npm run lint
 ```
 
-**4. Run with prettier**
+**6. Run with prettier**
 
 ```bash
 npm run prettier
 ```
 
-**5. Format with eslint and prettier:**
+**7. Run Priettier and Lint**
 
 ```bash
 npm run format
 ```
 
-## Usage:
-
-### Run project:
-
-**1. Format project :**
+**8. Build Tailwind Manually**
 
 ```bash
 npm run format
 ```
 
-**2. Run developement :**
+## Deployment:
 
-```bash
-npm run dev
-```
+This project can be deployed on platforms like [Netlify](https://app.netlify.com). When deploying to Netlify, ensure you have the following configurations:
 
-**2. Build for production:**
+- **1. Build project**:
 
 ```bash
 npm run build
 ```
 
-## Contributions Guidelines:
+- **2. Deploy via Netlify**:
 
-1. To contribute, **fork** the repository.
+  - Go to Netlify and log in.
 
-2. Create a **new branch.**
+  - Click "New site from Git" and connect your GitHub repo.
 
-```bash
-git checkout -b fork/your-fork-name
-```
+  - Set the build command: npm run build
 
-3. **Commit** your changes.
+  - Set the publish directory: dist/
 
-```bash
-git commit -m "Your commit message"
-```
+  - Click Deploy.
 
-5.  Submit a **PR** for review.
+## Dependencies List:
+
+- **Frontend & Styling:**
+
+  - Vite – Fast frontend tooling
+  - Tailwind CSS – Utility-first CSS framework
+  - PostCSS - Tailwind pre-processor
+  - Autoprefixer – Adds vendor prefixes
+
+- **Development Tools:**
+  - ESLint – Linting for cleaner code
+  - Prettier – Automatic code formatting
+  - Prettier Plugin TailwindCSS – Sort classnames
+  - Globals – Global variable definitions
+  - @eslint/js – Eslint core configuration
 
 ### License:
 
@@ -166,4 +158,4 @@ This project uses an **ISC** license.
 
 ### Acknowledgements:
 
-This project is a part of my _Noroff Course Assignment_.
+This project is a build on top of my _Noroff University of Technology_ education.

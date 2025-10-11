@@ -10,9 +10,17 @@ function applyInitialTheme() {
 
   const iconDark = document.getElementById("darkIcon");
   const iconLight = document.getElementById("lightIcon");
+  const logo = document.querySelector("#logo img");
+
   if (iconDark && iconLight) {
     iconDark.classList.toggle("hidden", !isDarkMode);
     iconLight.classList.toggle("hidden", isDarkMode);
+  }
+
+  if (logo) {
+  logo.src = isDarkMode
+    ? "/images/logo-full-01-dark.svg"
+    : "/images/logo-full-01.svg";
   }
 }
 
@@ -33,23 +41,32 @@ export function toggleMode() {
       return;
     }
 
+
     modeToggler.addEventListener("click", () => {
       const htmlElement = document.documentElement;
+      const logo = document.querySelector("#logo img");
 
       const isDarkMode = htmlElement.classList.toggle("dark");
       localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-      
+
       const activeIcon = isDarkMode ? iconDarkMode : iconLightMode;
       const inactiveIcon = isDarkMode ? iconLightMode : iconDarkMode;
 
       activeIcon.classList.remove("hidden");
       inactiveIcon.classList.add("hidden");
 
+
       activeIcon.classList.add("animate-bounce");
 
       if (animatedHeading) {
         animatedHeading.classList.toggle("light-mode-gradient", !isDarkMode);
         animatedHeading.classList.toggle("dark-mode-gradient", isDarkMode);
+      }
+
+      if (logo) {
+        logo.src = isDarkMode
+          ? "/images/logo-full-01-dark.svg"
+          : "/images/logo-full-01.svg";
       }
 
       setTimeout(() => {

@@ -1,5 +1,3 @@
-import { renderPostTemplate } from "../../ui/post/postTemplate";
-import { readPost } from "../../api/post/read";
 import { readMultiplePosts } from "../../api/post/read";
 import { renderMultiplePosts } from "../../ui/post/postTemplate";
 

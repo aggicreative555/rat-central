@@ -34,7 +34,7 @@ export function postTemplate(postData) {
   const data = postData.data || postData;
 
   const post = document.createElement("div");
-  post.className = "relative w-full min-h-96 bg-background-light rounded-lg shadow-lg shadow-brown-700/20 overflow-hidden group m-4";
+  post.className = "relative w-full min-h-96 bg-backgroundLight dark:text-textBrown rounded-lg shadow-lg shadow-brown-700/20 overflow-hidden group m-4";
 
   
   const imageContainer = document.createElement("div");
@@ -48,21 +48,20 @@ export function postTemplate(postData) {
   post.appendChild(imageContainer);
 
   const contentOverlay = document.createElement('div');
-  contentOverlay.className = 'absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brown-100 to-brown-100/0 backdrop-blur-md py-4 px-8 mt-2 group-hover:opacity-0 transition-all duration-300 ease-in-out space-y-1';
-
-  // Add username
-  const username = document.createElement('h3');
-  username.className = 'text-sm text-text-dark';
-  username.textContent = data.author || "anonymous";
+  contentOverlay.className = 'absolute bottom-0 left-0 right-0 bg-linear-to-b  from-brown-800 to-brown-100 backdrop-blur-md py-4 px-8 mt-2 group-hover:opacity-0 transition-all duration-300 ease-in-out space-y-1';
 
   
   // Add title
   const title = document.createElement("h4");
-  title.calssName = "text-2xl font-bold text-text-dark";
+  title.className = "flex justify-start items-center text-2xl font-black text-text-dark min-h-[70px] uppercase tracking-wide hover:tracking-wider line-clamp-1 truncate hover:truncate-none";
   title.textContent = data.title || "";
 
-  // Add comments
+  // Add user
+  const user = document.createElement("p");
+  user.className = "truncate text-textDark dark:text-textDark";
+  user.textContent = data.body || "This is my post";
 
+  // Add comments
   const commentContainer = document.createElement("div");
   commentContainer.className = "flex flex-row gap-2";
 
@@ -91,18 +90,16 @@ export function postTemplate(postData) {
   reactionCount.textContent = data._count?.reactions || "0";
   reactionContainer.appendChild(reactionCount);
 
-  
-  
-  
-  contentOverlay.appendChild(username);
+
   contentOverlay.appendChild(title);
+  contentOverlay.appendChild(user);
   post.appendChild(commentContainer);
   post.appendChild(reactionContainer);
   post.appendChild(contentOverlay);
   
   
   const hoverOverlay = document.createElement("div");
-  hoverOverlay.className = "absolute inset-0 bg-background-dark bg-opacity-80 items-center justify-center opacity-0 transition-all duration-300 ease-in-out p-8 space-y-1";
+  hoverOverlay.className = "absolute inset-0 bg-black bg-opacity-80 items-center justify-center opacity-0 transition-all duration-300 ease-in-out p-8 space-y-1";
 
   const hoverUsername = document.createElement("h3");
   hoverUsername.className = "text-sm text-text-light";
@@ -161,13 +158,13 @@ export function renderPostTemplate(postData, parent) {
   const data = postData.data || postData;
 
   const post = document.createElement("div");
-  post.className = "flex flex-col w-full h-fit lg:flex-row lg:w-[1022px] cursor-default lg:gap-4";
+  post.className = "flex flex-col w-full h-fit lg:flex-row lg:w-[1022px] cursor-default lg:gap-4 dark:text-textLight";
 
 
   // Add go back function
 
   const backContainer = document.createElement("a");
-  backContainer.className = "flex flex-row-reverse gap-2 w-full justify-end items-center my-10 px-8 text-text-dark text-lg font-semibold transition-all hover:text-brown-400 hover:font-bold hover:px-2";
+  backContainer.className = "flex dark:text-textBrown flex-row-reverse gap-2 w-full justify-end items-center my-10 px-8 text-text-dark text-lg font-semibold transition-all hover:text-brown-400 hover:font-bold hover:px-2 dark:text-textLight";
   backContainer.textContent = "Back";
 
   const backIcon = document.createElement("span");
@@ -191,7 +188,7 @@ export function renderPostTemplate(postData, parent) {
 
 
   const contentContainer = document.createElement('div');
-  contentContainer.className = 'flex flex-col gap-2 mx-8 my-4';
+  contentContainer.className = 'flex flex-col gap-2 mx-8 my-4 dark:text-textBrown';
   post.appendChild(contentContainer);
 
 
@@ -203,7 +200,7 @@ export function renderPostTemplate(postData, parent) {
   contentContainer.appendChild(interactiveContainer);
 
   const commentContainer = document.createElement("div");
-  commentContainer.className = "flex flex-row gap-2 group hover:text-text-dark transition-all";
+  commentContainer.className = "flex flex-row gap-2 group hover:text-textDark transition-all ";
 
   const commentIcon = document.createElement("span");
   commentIcon.className = "material-symbols-rounded group-hover:animate-pulse";
@@ -237,7 +234,7 @@ export function renderPostTemplate(postData, parent) {
 
   // Add title
   const title = document.createElement("h1");
-  title.className = "text-3xl lg:text-5xl font-bold text-text-dark pt-4";
+  title.className = "text-3xl lg:text-5xl font-bold text-text-dark pt-4 dark:text-textBrown";
   title.textContent = data.title || "";
 
   contentContainer.appendChild(title);
@@ -245,21 +242,21 @@ export function renderPostTemplate(postData, parent) {
 
   // Add author
   const username = document.createElement('h2');
-  username.className = 'text-sm text-brown-900/60 hover:font-medium cursor-pointer';
-  username.textContent = `${data.author || "anonymous"}`;
+  username.className = 'text-sm text-brown-900/60 hover:font-medium cursor-pointer dark:text-textBrown';
+  username.textContent = `${data.author.name || "anonymous"}`;
   contentContainer.appendChild(username);
 
   // Add description
   
   const description = document.createElement("p");
-  description.className = "text-md text-text-dark py-4";
+  description.className = "text-md text-text-dark py-4 dark:text-textBrown";
   description.textContent = data.body || "";
   contentContainer.appendChild(description);
 
   // Add tags 
 
   const tags = document.createElement("p");
-  tags.className = 'text-brown-900/60 text-sm italic lg:mt-auto hover:underline hover:font-medium cursor-pointer'
+  tags.className = 'text-brown-900/60 text-sm italic lg:mt-auto hover:underline hover:font-medium cursor-pointer dark:text-textBrown '
   tags.innerText = `${data.tags.map(tag => `#${tag}`).join(", ")}`;
   contentContainer.appendChild(tags);
 
@@ -281,7 +278,7 @@ export function renderMultiplePosts(posts, parent) {
 
 export async function renderSinglePost(postId, postsContainer) {
   try {
-    const post = await readPost(postId);
+    const post = await readPost(postId, { author: true, comments: true, reactions: true });
     renderPostTemplate(post, postsContainer); 
   } catch (error) {
     console.error("Error loading a single post:", error);

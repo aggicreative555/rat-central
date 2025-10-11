@@ -1,6 +1,5 @@
-import { API_AUTH_LOGIN } from "../constants";
+import { API_AUTH_LOGIN, API_KEY } from "../constants";
 import { save } from "../../utilities/authGuard";
-import { initalizeApiKey } from "./initializeApiKey";
 
 /**
  * Logs in a user with the provided email and password.
@@ -24,6 +23,7 @@ export async function login(profile) {
     const response = await fetch(API_AUTH_LOGIN, {
       headers: {
         "Content-Type": "application/json",
+        "X-Noroff-API-Key": API_KEY,
       },
       method: "POST",
       body,
@@ -40,7 +40,6 @@ export async function login(profile) {
 
       save("accessToken", accessToken);
       save("user", user);
-      initalizeApiKey();
     }
   } catch (error) {
     console.error("Login error:", error);

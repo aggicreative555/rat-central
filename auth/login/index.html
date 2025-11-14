@@ -4,33 +4,71 @@
     <meta charset="UTF-8" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title> Rat Central | Login page </title>
+    <meta name="description" content="Welcome back! Login to Rat central and view posts from your ratty community!"/>
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Rat Central" />
+
+    <link href="../../src/css/style.css" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&"
+    />
   </head>
+  <body class="bg-backgroundLight text-text-dark dark:bg-backgroundDark dark:text-textLight">
+    <header class="w-full flex justify-center">
+      <div class="py-4 px-10 h-fit w-screen m-4 flex justify-between content-center font-semibold text-lg">
+        <div class="flex justify-start">
+          <a href="/" class="align-center" title="Home" aria-label="Home link" id="logo"><img src="/images/logo-full-01.svg" alt="Rat Central Logo"/></a>
+        </div>
+        <div class="lg:hidden justify-end content-center m-4 right-20" id="toggleBtn">
+          <button id="hamburger" class="transition-all duration-300 ease-in-out" >
+            <span class="material-symbols-rounded text-4xl">menu</span>
+          </button>
+          <button id="closeBtn" class="hidden transition-all duration-300 ease-in-out">
+            <span class="material-symbols-rounded text-4xl">close</span>
+          </button>
+        </div>
+        <nav class="content-center hidden animate-fade-in" id="navToggler">
+          <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
+          <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
+          <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
+          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
+            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
+            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main class="flex flex-col items-center justify-center mx-auto px-4 h-auto my-8">
+      <h1 class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient dark:dark-mode-gradient flex flex-col">Login to <span id="animatedHeading">rat central!</span>
+      </h1>
+      <div class="flex">
+        <form name="login" id="loginForm" class="w-fit flex flex-col gap-10 mt-10 text-textDark dark:text-textBrown dark:bg-amber-900/20 md:p-20 p-5">
+          <div class="flex flex-col gap-2 my-8 justify-center">
+            <label class="font-medium" for="email">Email</label>
+            <input class="input-default" id="email" type="email" name="email" pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+            title="Please enter a valid noroff.no or stud.noroff.no address"
+            placeholder="student@stud.noroff.no" required
+            autocomplete="off" />
+          </div>
   
-  <body>
-    <nav class="nav-bar"></nav>
-    <a href="/">Home</a>
-    <a href="/profile/">My Profile</a>
-    <button id="logoutButton">Logout</button>
-  </nav>
-  <h1>Login</h1>
-  <form name="login" id="loginForm">
-    <div>
-      <label for="email">Email</label>
-        <input id="email" type="email" name="email" required />
+          <div class="flex flex-col gap-3 my-8">
+            <label class="font-medium" for="password">Password</label>
+            <input class="input-default" type="password" name="password" id="password" placeholder="*******" minlength="8" required autocomplete="off"/>
+          </div>
+          <button class="btn-primary my-8" type="submit">Login</button>
+        </form>
       </div>
-      
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
-      </div>
-      
-      <a href="/auth/register/">Register</a>
-      <button>Login</button>
-    </form>
-    <script type="module" src="../../src/js/router/views/login.js" defer></script>
-    <script type="module" src="/src/app.js" defer></script>
+    </main>
+    <script type="module" src="/src/js/api/auth/login.js"></script>
+    <script type="module" src="/src/app.js"></script>
   </body>
-  </html>
+</html>
   
   

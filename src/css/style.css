@@ -1,1 +1,135 @@
 @import url(_reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Ruslan+Display&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slideUp-animation {
+    animation: fadeSlideUp 4s infinite ease-in-out; 
+}
+
+#post1 {
+    animation-delay: 50ms;
+  }
+  
+#post2 {
+animation-delay: 250ms; 
+}
+
+#post3 {
+animation-delay: 500ms; 
+}
+
+@layer base {
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px theme('colors.backgroundLight') inset !important;
+    -webkit-text-fill-color: theme('colors.textDark') !important;
+    -webkit-text-size: theme('colors.textDark') !important;
+  }
+
+  .dark input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px theme('colors.backgroundBrown') inset !important;
+    -webkit-text-fill-color: theme('colors.textDark') !important;
+  }
+
+   
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+    -webkit-text-fill-color: currentColor; 
+    font-size: 1.125rem !important; 
+    font-family: inherit !important; 
+    }
+
+}
+
+
+
+
+@keyframes fadeSlideUp {
+    0% {
+    opacity: 0;
+    transform: translateY(40%);
+    }
+    20% {
+    opacity: 1;
+    transform: translateY(2%);
+    }
+    65% {
+    opacity: 1;
+    transform: translateY(2%);
+    }
+    100% {
+    opacity: 0;
+    transform: translateY(-10%);
+    }
+}
+
+@layer components {
+/* Base button styles */
+
+.drop-down {
+    @apply absolute flex flex-col-reverse gap-14 justify-center min-w-80 items-center right-2 z-10 top-16 mt-16 h-fit py-20 px-24 origin-top-right bg-backgroundLight rounded-md shadow-xl shadow-brown-900/20 ring-brown-900/10 ring-1 animate-fade-in;
+}
+
+.nav-bar {
+    @apply flex flex-row gap-10 items-center; 
+}
+
+.link {
+    @apply text-text-dark hover:text-brown-400 dark:text-textBrown transition-colors duration-300;
+}
+
+.nav-bar button, .drop-down button {
+    @apply text-brown-900 dark:text-textBrown hover:text-brown-400 transition-colors duration-300 ;
+}
+
+/* Button variants */
+.btn-primary {
+    @apply bg-orange-100 border-solid border-brown-800/50 border-2 shadow-xl text-text-dark py-3 px-8 rounded-md font-semibold capitalize hover:bg-brown-500 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300 border-orange-100;
+}
+
+.btn-secondary {
+    @apply bg-brown-400 border-solid border-brown-800/20 dark:border-brown-400 border-2 shadow-xl text-text-dark py-3 px-8 text-center rounded-md font-semibold capitalize hover:bg-brown-700 hover:text-text-light hover:font-bold hover:shadow-md hover:rounded-xl hover:px-9 transform ease-in-out duration-300;
+}
+
+.btn-accent {
+    @apply bg-brown-700/20 dark:bg-brown-500 dark:text-textBrown py-3 px-8 text-center rounded-full font-semibold capitalize hover:bg-brown-600/70 hover:font-bold hover:shadow-md hover:px-9 transform ease-in-out duration-300;
+}
+
+/* Input variants */
+.input-default {
+    @apply border-solid border-brown-500/50 border-2 md:w-96 w-fit text-lg text-text-medium py-2 px-6 rounded-md font-semibold placeholder:text-brown-500/50 dark:placeholder:text-textDark hover:text-text-dark hover:ring-inset hover:ring-brown-900/10 hover:ring-2 hover:font-semibold dark:bg-brown-400 hover:border-brown-600 hover:px-9 transform ease-in-out duration-300 transition-all;
+
+}
+
+/* Gradients */
+
+.light-mode-gradient {
+    @apply bg-gradient-to-br from-brown-900  to-brown-400;
+}
+
+.dark-mode-gradient {
+    @apply bg-gradient-to-br from-orange-100 to-orange-500;
+
+}
+
+.display-gradient {
+    @apply bg-gradient-to-tr from-orange-100 to-orange-500;
+
+}
+
+/* Posts */
+
+.posts-container {
+    @apply mt-14 mx-5 h-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center align-middle transition-all dark:bg-amber-900/20;
+}
+
+.single-post {
+    @apply flex h-fit w-full flex-col lg:mx-10 my-10 items-center justify-center transition-all duration-500 dark:bg-amber-900/20;
+
+}
+
+}

@@ -5,20 +5,19 @@ import { remove } from "../../utilities/authGuard";
  *
  * @function onLogout
  * @returns {void}
- * @throws {Error} If accessToken is missing or cannot be removed. 
+ * @throws {Error} If accessToken is missing or cannot be removed.
  *
-*/
+ */
 
 export function onLogout() {
-    try {
-        remove("accessToken");
-        sessionStorage.removeItem("accessToken");
-    
-        alert("You are now logged out.");
-        window.location.href = "/auth/login/";
+  try {
+    remove("accessToken");
+    remove("user");
 
-    } catch (error) {
-        console.error("Logout unsuccessful. Refresh the page and try again.");
-        throw error;
-    }
+    alert("You are now logged out.");
+    window.location.href = "/auth/login/";
+  } catch (error) {
+    console.error("Logout unsuccessful. Refresh the page and try again.");
+    throw error;
+  }
 }

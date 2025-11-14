@@ -1,11 +1,21 @@
-import { resolve } from "path";
+
 import { defineConfig } from "vite";
+import { resolve, dirname } from "path";
+import { fileURLToPath } from "url";
+import postcss from "postcss";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
   appType: "mpa",
   base: "",
+  server: {
+    port: 3000,
+  },
   build: {
     target: "esnext",
+    outDir: "dist",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "./index.html"),
@@ -18,5 +28,9 @@ export default defineConfig({
         createPost: resolve(__dirname, "./post/create/index.html"),
       },
     },
+  },
+  plugins: [],
+  css: {
+    postcss,
   },
 });

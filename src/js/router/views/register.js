@@ -1,7 +1,11 @@
 import { onRegister } from "../../ui/auth/register";
 
-document.addEventListener("DOMContentLoaded", () => {
+export function initializeRegister() {
+  try {
     onRegister();
-});
+  } catch {
+    console.error("Error initializing register function.");
+  }
+}
 
-
+initializeRegister();

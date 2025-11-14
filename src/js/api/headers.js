@@ -1,4 +1,5 @@
 import { load } from "../utilities/authGuard";
+import { API_KEY } from "./constants";
 
 /**
  * Generates HTTP headers for API requests, including Content-Type, Authorization, and API key.
@@ -10,35 +11,31 @@ import { load } from "../utilities/authGuard";
  *   - `Authorization`: Bearer token for user authentication.
  *   - `X-Noroff-API-Key`: API key for the service.
  * @throws {Error} If the access token or API key is missing.
- * 
+ *
  */
-
 
 export async function headers() {
   const accessToken = load("accessToken");
-  const apiKey = localStorage.getItem("apiKey");
+  const apiKey = API_KEY;
 
   try {
-    
     if (!accessToken) {
-      throw new Error("Authorization token is missing. Please log in.")
+      throw new Error("Authorization token is missing. Please log in.");
     }
-  
+
     if (!apiKey) {
       throw new Error("API Key is missing. Please retrieve it first.");
     }
-  
+
     return {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
       "X-Noroff-API-Key": apiKey,
     };
-
   } catch (error) {
     console.error("Error generating headers");
     throw error;
   }
-
 }
 
 /**
@@ -53,11 +50,11 @@ export async function headers() {
  *
  * @example
  * const url = "https://api.example.com/resource";
- * const options = { 
- * method: "POST", 
- * body: JSON.stringify({ key: "value" }) 
+ * const options = {
+ * method: "POST",
+ * body: JSON.stringify({ key: "value" })
  * };
- * 
+ *
  * try {
  *   const response = await getHeaders(url, options);
  *   console.log(await response.json());
@@ -65,7 +62,6 @@ export async function headers() {
  *   console.error("Error fetching headers:", error.message);
  * }
  */
-
 
 export async function getHeaders(url, options) {
   const headerOptions = await headers();
@@ -75,10 +71,8 @@ export async function getHeaders(url, options) {
       ...options,
       headers: headerOptions,
     });
-
   } catch (error) {
     console.log("Error fetching headers:", error.message);
     throw error;
-
   }
 }

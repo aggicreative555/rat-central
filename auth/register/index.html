@@ -4,53 +4,90 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title> Rat Central | Register page </title>
+    <meta name="description" content="Become a part of the rat family!"/>
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Rat Central" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link href="../../src/css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&"
+    />
   </head>
-
-  <body>
-    <h1>Register</h1>
-
-    <form name="register" id="registerForm">
-      <div>
-        <label for="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          required
-          maxlength="20"
-          pattern="^[\w]+$"
-          title="Please enter a username using only letters and numbers"
-        />
+  <body class="bg-backgroundLight text-text-dark dark:bg-backgroundDark dark:text-textLight">
+    <header class="w-full flex justify-center">
+      <div class="py-4 px-10 h-fit w-screen m-4 flex justify-between content-center font-semibold text-lg">
+        <div class="flex justify-start">
+          <a href="/" class="align-center" title="Home" aria-label="Home link" id="logo"><img src="/images/logo-full-01.svg" alt="Rat Central Logo"/></a>
+        </div>
+        <div class="lg:hidden justify-end content-center m-4 right-20" id="toggleBtn">
+          <button id="hamburger" class="transition-all duration-300 ease-in-out" >
+            <span class="material-symbols-rounded text-4xl">menu</span>
+          </button>
+          <button id="closeBtn" class="hidden transition-all duration-300 ease-in-out">
+            <span class="material-symbols-rounded text-4xl">close</span>
+          </button>
+        </div>
+        <nav class="content-center hidden animate-fade-in" id="navToggler">
+          <a href="/post/" title="Explore page" aria-label="Explore page" class="link">Explore</a>
+          <a href="/auth/login/" title="Login page" aria-label="Login page" class="btn-accent">Login</a>
+          <a href="/auth/register/" title="Register page" aria-label="Register page" class="link">Register</a>
+          <button id="modeToggler" title="Dark/light theme button" aria-label="Dark or light theme toggle">
+            <span id="lightIcon" class="material-symbols-rounded">brightness_4</span>
+            <span id="darkIcon" class="hidden material-symbols-rounded">brightness_low</span>
+          </button>
+        </nav>
       </div>
+    </header>
 
-      <div>
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          required
-          pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-          title="Please enter a valid noroff.no or stud.noroff.no address"
-        />
+    <main class="flex flex-col items-center justify-center mx-auto px-4 h-auto my-8">
+      <h1 id="animatedHeading" class="font-display text-transparent text-center text-4xl md:text-6xl bg-clip-text animate-gradient-xy light-mode-gradient dark:dark-mode-gradient flex flex-col">Register a new user
+      </h1>
+      <div class="flex flex-col">
+        <form name="register" id="registerForm" class="w-fit flex flex-col gap-10 mt-10 text-textDark dark:text-textBrown dark:bg-amber-900/20 md:p-20 p-5">
+          <div class="flex flex-col gap-2 my-8 justify-center">
+            <label class="font-medium" for="name">Username</label>
+            <input class="input-default " id="name"
+            type="text"
+            name="name"
+            maxlength="20"
+            pattern="^[\w]+$"
+            title="Please enter a username using only letters and numbers"
+            placeholder="user_123"
+            required
+            autocomplete="off"/>
+          </div>
+
+          <div class="flex flex-col gap-2 my-8">
+            <label class=" font-medium" for="email">Email</label>
+            <input class="input-default text-lg" id="email" type="email" name="email" placeholder="student@stud.noroff.no" pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+            title="Please enter a valid noroff.no or stud.noroff.no address"
+            required
+            autocomplete="off"/>
+          </div>
+        
+          <div class="flex flex-col gap-3 my-8">
+            <label class=" font-medium" for="password">Password</label>
+            <input class="input-default text-lg" type="password" name="password" id="password" placeholder="*******"
+            minlength="8" 
+            required
+            autocomplete="off"/>
+          </div>
+          <div class="flex flex-col gap-4">
+            <button class="btn-primary mt-2" type="submit">Register</button>
+            <h2 class="text-2xl tracking-wide uppercase font-black mt-8 text-center">Already a user?</h2>
+            <a class="btn-secondary" href="/auth/login/">Login</a>
+          </div>
+        </form>
       </div>
-
-      <div>
-        <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-          minlength="8"
-        />
-      </div>
-
-      <a href="/auth/login/">Login</a>
-      <button type="submit">Register</button>
-    </form>
+    </main>
+    <script type="module" src="../../src/app.js"></script>
     <script type="module" src="../../src/js/router/views/register.js"></script>
-    <script type="module" src="/src/app.js"></script>
   </body>
 </html>

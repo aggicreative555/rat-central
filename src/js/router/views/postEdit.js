@@ -3,7 +3,6 @@ import { authGuard } from "../../utilities/authGuard";
 import { getEditPostData } from "../../api/post/update";
 import { onDeletePost } from "../../ui/post/delete";
 
-
 /**
  * Initializes event listeners for editing a post and deleting a post.
  * This function is executed once the DOM has fully loaded.
@@ -16,39 +15,39 @@ import { onDeletePost } from "../../ui/post/delete";
  *
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    authGuard();
-    
-    const params = new URL(document.location).searchParams;
-    const id = params.get("id");
+function initializePostEdit() {
+  authGuard();
 
-    if (id) {
-        
-        getEditPostData(id);
+  const params = new URL(document.location).searchParams;
+  const id = params.get("id");
 
-    } else {
-        console.error("Post id not found.")
+  if (id) {
+    getEditPostData(id);
+  } else {
+    console.error("Post id not found.");
+  }
 
-    }
+  const form = document.querySelector("#updatePost");
+  const deleteButton = document.querySelector("#deleteButton");
 
+  if (form) {
+    form.addEventListener("submit", onUpdatePost);
+  } else {
+    console.error(
+      "Update Post form not found. Verify the `id` attribute and ensure it is loaded in the DOM.",
+    );
+  }
 
-    const form = document.querySelector("#updatePost");
-    const deleteButton = document.querySelector("#deleteButton");
+  if (deleteButton) {
+    deleteButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      onDeletePost(event);
+    });
+  } else {
+    console.error(
+      "Delete button not found. Verify the `id` attribute and ensure it is loaded in the DOM.",
+    );
+  }
+}
 
-    if (form) {
-
-        form.addEventListener("submit",onUpdatePost);
-
-    } else {
-        console.error("Update Post form not found. Verify the `id` attribute and ensure it is loaded in the DOM.");
-    }
-
-    if (deleteButton) {
-        deleteButton.addEventListener("click", (event) => {
-            event.preventDefault();
-            onDeletePost(event);
-        });
-    } else {
-        console.error("Delete button not found. Verify the `id` attribute and ensure it is loaded in the DOM.");
-    }
-});
+initializePostEdit();
